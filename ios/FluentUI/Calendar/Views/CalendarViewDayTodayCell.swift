@@ -36,29 +36,29 @@ class CalendarViewDayTodayCell: CalendarViewDayCell {
         if isHighlighted || isSelected {
             switch backgroundStyle {
             case .primary:
-                contentView.backgroundColor = Colors.Calendar.Day.backgroundPrimary
+                contentView.backgroundColor = .black // Colors.Calendar.Day.backgroundPrimary
             case .secondary:
-                contentView.backgroundColor = Colors.Calendar.Day.backgroundSecondary
+                contentView.backgroundColor = .black // Colors.Calendar.Day.backgroundSecondary
             }
         } else {
-            contentView.backgroundColor = Colors.Calendar.Today.background
+            contentView.backgroundColor = .black // Colors.Calendar.Today.background
         }
     }
 
     private func configureFontColor() {
         if isHighlighted || isSelected {
             dateLabel.font = UIFontMetrics.default.scaledFont(for: Fonts.body, maximumPointSize: Constants.maximumFontSize)
-            dateLabel.textColor = Colors.Calendar.Day.textSelected
+            dateLabel.textColor = .black // Colors.Calendar.Day.textSelected
             dateLabel.showsLargeContentViewer = true
         } else {
             dateLabel.font = UIFontMetrics(forTextStyle: .headline).scaledFont(for: Fonts.headline, maximumPointSize: Constants.maximumFontSize)
             switch textStyle {
             case .primary:
-                dateLabel.textColor = Colors.Calendar.Day.textPrimary
-                dotView.color = Colors.Calendar.Day.textPrimary
+                dateLabel.textColor = .black // Colors.Calendar.Day.textPrimary
+                dotView.color = .black // Colors.Calendar.Day.textPrimary
             case .secondary:
-                dateLabel.textColor = Colors.Calendar.Day.textSecondary
-                dotView.color = Colors.Calendar.Day.textSecondary
+                dateLabel.textColor = .black // Colors.Calendar.Day.textSecondary
+                dotView.color = .black // Colors.Calendar.Day.textSecondary
             }
         }
     }

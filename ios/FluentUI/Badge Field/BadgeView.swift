@@ -49,7 +49,7 @@ public protocol BadgeViewDelegate {
 }
 
 // MARK: - Badge Colors
-
+/*
 private extension Colors {
     struct Badge {
         static var background: UIColor = .clear
@@ -66,6 +66,7 @@ private extension Colors {
         static var textWarningSelected: UIColor = .black
     }
 }
+ */
 
 // MARK: - BadgeView
 
@@ -161,12 +162,12 @@ open class BadgeView: UIView {
             switch style {
             case .default:
                 if let window = window {
-                    return Colors.primary(for: window)
+                    return .black // Colors.primary(for: window)
                 }
             case .warning:
-                return Colors.Badge.textWarning
+                return .black // Colors.Badge.textWarning
             case .error:
-                return Colors.Badge.textError
+                return .black // Colors.Badge.textError
             }
             return nil
         }
@@ -187,11 +188,11 @@ open class BadgeView: UIView {
 
             switch style {
             case .default:
-                return Colors.Badge.textSelected
+                return .black // Colors.Badge.textSelected
             case .warning:
-                return Colors.Badge.textWarningSelected
+                return .black // Colors.Badge.textWarningSelected
             case .error:
-                return Colors.Badge.textErrorSelected
+                return .black // Colors.Badge.textErrorSelected
             }
         }
         set {
@@ -208,7 +209,7 @@ open class BadgeView: UIView {
             if let customDisabledLabelTextColor = _disabledLabelTextColor {
                 return customDisabledLabelTextColor
             }
-            return style == .default ? Colors.Badge.textDisabled : (isSelected ? self.selectedLabelTextColor : self.labelTextColor)
+            return style == .default ? .black : .black // Colors.Badge.textDisabled : (isSelected ? self.selectedLabelTextColor : self.labelTextColor)
         }
         set {
             if disabledBackgroundColor != newValue {
@@ -227,12 +228,12 @@ open class BadgeView: UIView {
             switch style {
             case .default:
                 if let window = window {
-                    return Colors.primaryTint40(for: window)
+                    return .black // Colors.primaryTint40(for: window)
                 }
             case .warning:
-                return Colors.Badge.backgroundWarning
+                return .black // Colors.Badge.backgroundWarning
             case .error:
-                return Colors.Badge.backgroundError
+                return .black // Colors.Badge.backgroundError
             }
             return nil
         }
@@ -253,12 +254,12 @@ open class BadgeView: UIView {
             switch style {
             case .default:
                 if let window = window {
-                    return Colors.primary(for: window)
+                    return .black // Colors.primary(for: window)
                 }
             case .warning:
-                return Colors.Badge.backgroundWarningSelected
+                return .black // Colors.Badge.backgroundWarningSelected
             case .error:
-                return Colors.Badge.backgroundErrorSelected
+                return .black // Colors.Badge.backgroundErrorSelected
             }
             return nil
         }
@@ -276,7 +277,7 @@ open class BadgeView: UIView {
             if let customDisabledBackgroundColor = _disabledBackgroundColor {
                 return customDisabledBackgroundColor
             }
-            return style == .default ? Colors.Badge.backgroundDisabled : (isSelected ? self.selectedBackgroundColor : self.backgroundColor)
+            return style == .default ? .black : .black // Colors.Badge.backgroundDisabled : (isSelected ? self.selectedBackgroundColor : self.backgroundColor)
         }
         set {
             if disabledBackgroundColor != newValue {
@@ -448,7 +449,7 @@ open class BadgeView: UIView {
 
     private func updateBackgroundColor() {
         backgroundView.backgroundColor = isActive ? (isSelected ? selectedBackgroundColor : backgroundColor) : disabledBackgroundColor
-        super.backgroundColor = Colors.Badge.background
+        super.backgroundColor = .black // Colors.Badge.background
     }
 
     private func updateLabelTextColor() {

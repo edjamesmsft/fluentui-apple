@@ -6,7 +6,7 @@
 import UIKit
 
 // MARK: PageCardPresenter Colors
-
+/*
 private extension Colors {
     struct PageCardPresenter {
         // Should use physical color because page indicators are shown on physical blurred dark background
@@ -14,6 +14,7 @@ private extension Colors {
         static var pageIndicator = UIColor.white.withAlphaComponent(0.5)
     }
 }
+ */
 
 // MARK: - CardPresentable
 
@@ -54,8 +55,8 @@ open class PageCardPresenterController: UIViewController {
         let pageControl = UIPageControl()
         pageControl.hidesForSinglePage = true
         pageControl.isUserInteractionEnabled = false
-        pageControl.pageIndicatorTintColor = Colors.PageCardPresenter.pageIndicator
-        pageControl.currentPageIndicatorTintColor = Colors.PageCardPresenter.currentPageIndicator
+        pageControl.pageIndicatorTintColor = .black // Colors.PageCardPresenter.pageIndicator
+        pageControl.currentPageIndicatorTintColor = .black // Colors.PageCardPresenter.currentPageIndicator
         return pageControl
     }()
 

@@ -5,7 +5,7 @@
 import UIKit
 
 // MARK: SegmentedControl Colors
-
+/*
 private extension Colors {
     struct SegmentedControl {
         struct PrimaryPill {
@@ -24,7 +24,7 @@ private extension Colors {
         }
     }
 }
-
+*/
 // MARK: SegmentedControl
 /// A styled segmented control that should be used instead of UISegmentedControl. It is designed to flex the button width proportionally to the control's width.
 @objc(MSFSegmentedControl)
@@ -42,74 +42,74 @@ open class SegmentedControl: UIControl {
         func backgroundColor(for window: UIWindow) -> UIColor {
             switch self {
             case .primaryPill:
-                return Colors.SegmentedControl.PrimaryPill.background
+                return .black // Colors.SegmentedControl.PrimaryPill.background
             case .onBrandPill:
-                return UIColor(light: Colors.primaryShade10(for: window), dark: Colors.SegmentedControl.OnBrandPill.background)
+                return .black // IColor(light: Colors.primaryShade10(for: window), dark: Colors.SegmentedControl.OnBrandPill.background)
             }
         }
         func backgroundColorDisabled(for window: UIWindow) -> UIColor {
             switch self {
             case .primaryPill:
-                return Colors.SegmentedControl.PrimaryPill.backgroundDisabled
+                return .black // Colors.SegmentedControl.PrimaryPill.backgroundDisabled
             case .onBrandPill:
-                return UIColor(light: Colors.primaryShade10(for: window), dark: Colors.SegmentedControl.OnBrandPill.backgroundDisabled)
+                return .black // UIColor(light: Colors.primaryShade10(for: window), dark: Colors.SegmentedControl.OnBrandPill.backgroundDisabled)
             }
         }
         func selectionColor(for window: UIWindow) -> UIColor {
             switch self {
             case .primaryPill:
-                return Colors.primary(for: window)
+                return .black // Colors.primary(for: window)
             case .onBrandPill:
-                return Colors.SegmentedControl.OnBrandPill.selection
+                return .black // Colors.SegmentedControl.OnBrandPill.selection
             }
         }
         var selectionColorDisabled: UIColor {
             switch self {
             case .primaryPill:
-                return Colors.SegmentedControl.PrimaryPill.selectionDisabled
+                return .black // Colors.SegmentedControl.PrimaryPill.selectionDisabled
             case .onBrandPill:
-                return Colors.SegmentedControl.OnBrandPill.selectionDisabled
+                return .black // Colors.SegmentedControl.OnBrandPill.selectionDisabled
             }
         }
         var segmentTextColor: UIColor {
             switch self {
             case .primaryPill:
-                return Colors.SegmentedControl.PrimaryPill.segmentText
+                return .black // Colors.SegmentedControl.PrimaryPill.segmentText
             case .onBrandPill:
-                return Colors.SegmentedControl.OnBrandPill.segmentText
+                return .black // Colors.SegmentedControl.OnBrandPill.segmentText
             }
         }
         func segmentTextColorSelected(for window: UIWindow) -> UIColor {
             switch self {
             case .primaryPill:
-                return Colors.textOnAccent
+                return .black // Colors.textOnAccent
             case .onBrandPill:
-                return UIColor(light: Colors.primary(for: window), dark: Colors.textDominant)
+                return .black // UIColor(light: Colors.primary(for: window), dark: Colors.textDominant)
             }
         }
         func segmentTextColorDisabled(for window: UIWindow) -> UIColor {
             switch self {
             case .primaryPill:
-                return Colors.textDisabled
+                return .black // Colors.textDisabled
             case .onBrandPill:
-                return UIColor(light: Colors.primaryTint10(for: window), dark: Colors.textDisabled)
+                return .black // UIColor(light: Colors.primaryTint10(for: window), dark: Colors.textDisabled)
             }
         }
         func segmentTextColorSelectedAndDisabled(for window: UIWindow) -> UIColor {
             switch self {
             case .primaryPill:
-                return UIColor(light: Colors.surfacePrimary, dark: Colors.gray500)
+                return .black // UIColor(light: Colors.surfacePrimary, dark: Colors.gray500)
             case .onBrandPill:
-                return UIColor(light: Colors.primaryTint20(for: window), dark: Colors.gray500)
+                return .black // UIColor(light: Colors.primaryTint20(for: window), dark: Colors.gray500)
             }
         }
 
         func segmentUnreadDotColor(for window: UIWindow) -> UIColor {
             switch self {
             case .primaryPill:
-                return UIColor(light: Colors.primary(for: window), dark: Colors.gray100)
+                return .black // UIColor(light: Colors.primary(for: window), dark: Colors.gray100)
             case .onBrandPill:
-                return Colors.SegmentedControl.OnBrandPill.segmentText
+                return .black // Colors.SegmentedControl.OnBrandPill.segmentText
             }
         }
 

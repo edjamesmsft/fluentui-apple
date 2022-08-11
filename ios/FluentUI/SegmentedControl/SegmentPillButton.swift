@@ -17,7 +17,7 @@ class SegmentPillButton: UIButton {
         }
     }
 
-    var unreadDotColor: UIColor = Colors.gray100
+    var unreadDotColor: UIColor = .black // Colors.gray100
 
     override var isSelected: Bool {
         didSet {

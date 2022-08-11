@@ -15,14 +15,14 @@ enum HUDType: Equatable {
 }
 
 // MARK: - HUD Colors
-
+/*
 private extension Colors {
     struct HUD {
         static var activityIndicator: UIColor = .white
         static var background = UIColor(light: gray900.withAlphaComponent(0.9), dark: gray700)
         static var text = UIColor(light: textOnAccent, dark: textPrimary)
     }
-}
+*/
 
 // MARK: - HUDView
 
@@ -59,7 +59,7 @@ class HUDView: UIView {
 
     let label: Label = {
         let label = Label()
-        label.textColor = Colors.HUD.text
+        label.textColor = .black // Colors.HUD.text
         label.numberOfLines = 2
         label.textAlignment = .center
         return label
@@ -74,7 +74,7 @@ class HUDView: UIView {
         super.init(frame: .zero)
 
         isUserInteractionEnabled = false
-        backgroundColor = Colors.HUD.background
+        backgroundColor = .black // Colors.HUD.background
         layer.cornerRadius = Constants.backgroundCornerRadius
         layer.masksToBounds = true
         layer.cornerCurve = .continuous
@@ -188,16 +188,16 @@ class HUDView: UIView {
         switch type {
         case .activity:
             let activityIndicator = MSFActivityIndicator(size: .xLarge)
-            activityIndicator.state.color = Colors.HUD.activityIndicator
+            activityIndicator.state.color = .black // Colors.HUD.activityIndicator
             activityIndicator.state.isAnimating = true
             return activityIndicator
         case .success:
             let imageView = UIImageView(image: .staticImageNamed("checkmark-36x36"))
-            imageView.tintColor = Colors.HUD.activityIndicator
+            imageView.tintColor = .black // Colors.HUD.activityIndicator
             return imageView
         case .failure:
             let imageView = UIImageView(image: .staticImageNamed("dismiss-36x36"))
-            imageView.tintColor = Colors.HUD.activityIndicator
+            imageView.tintColor = .black // Colors.HUD.activityIndicator
             return imageView
         case .custom(let image):
             return UIImageView(image: image)

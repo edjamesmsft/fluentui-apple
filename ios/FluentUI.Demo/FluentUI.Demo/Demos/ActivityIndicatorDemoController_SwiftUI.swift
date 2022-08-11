@@ -34,7 +34,7 @@ struct ActivityIndicatorDemoView: View {
                 ActivityIndicator(size: size)
                     .isAnimating(isAnimating)
                     .hidesWhenStopped(hidesWhenStopsAnimating)
-                    .color(usesCustomColor ? Colors.communicationBlue : nil)
+                    .color(usesCustomColor ? .black : .black) // Colors.communicationBlue : nil)
             }
             .frame(maxWidth: .infinity, minHeight: 100, alignment: .center)
 

@@ -21,7 +21,7 @@ enum DemoColorTheme: CaseIterable {
             return "None"
         }
     }
-
+/*
     var provider: ColorProviding? {
         switch self {
         case .default:
@@ -32,43 +32,44 @@ enum DemoColorTheme: CaseIterable {
             return nil
         }
     }
+ */
 }
 
-class DemoColorDefaultTheme: NSObject, ColorProviding {
+class DemoColorDefaultTheme: NSObject {// , ColorProviding {
     func primaryColor(for window: UIWindow) -> UIColor? {
-        return Colors.communicationBlue
+        return  .black // Colors.communicationBlue
     }
 
     func primaryTint10Color(for window: UIWindow) -> UIColor? {
-        Colors.Palette.communicationBlueTint10.color
+        .black // Colors.Palette.communicationBlueTint10.color
     }
 
     func primaryTint20Color(for window: UIWindow) -> UIColor? {
-        Colors.Palette.communicationBlueTint20.color
+        .black // Colors.Palette.communicationBlueTint20.color
     }
 
     func primaryTint30Color(for window: UIWindow) -> UIColor? {
-        Colors.Palette.communicationBlueTint30.color
+        .black // Colors.Palette.communicationBlueTint30.color
     }
 
     func primaryTint40Color(for window: UIWindow) -> UIColor? {
-        Colors.Palette.communicationBlueTint40.color
+        .black // Colors.Palette.communicationBlueTint40.color
     }
 
     func primaryShade10Color(for window: UIWindow) -> UIColor? {
-        Colors.Palette.communicationBlueShade10.color
+        .black // Colors.Palette.communicationBlueShade10.color
     }
 
     func primaryShade20Color(for window: UIWindow) -> UIColor? {
-        Colors.Palette.communicationBlueShade20.color
+        .black // Colors.Palette.communicationBlueShade20.color
     }
 
     func primaryShade30Color(for window: UIWindow) -> UIColor? {
-        Colors.Palette.communicationBlueShade30.color
+        .black // Colors.Palette.communicationBlueShade30.color
     }
 }
 
-class DemoColorGreenTheme: NSObject, ColorProviding {
+class DemoColorGreenTheme: NSObject { //, ColorProviding {
     func primaryColor(for window: UIWindow) -> UIColor? {
         return UIColor(named: "Colors/DemoPrimaryColor")
     }

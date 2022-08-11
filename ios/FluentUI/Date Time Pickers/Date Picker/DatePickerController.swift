@@ -168,7 +168,7 @@ class DatePickerController: UIViewController, GenericDateTimePicker {
 
         if let segmentedControl = segmentedControl {
             view.addSubview(segmentedControl)
-            view.backgroundColor = Colors.Toolbar.background
+            view.backgroundColor = .black // Colors.Toolbar.background
         }
         view.addSubview(calendarView)
 
@@ -199,7 +199,7 @@ class DatePickerController: UIViewController, GenericDateTimePicker {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if let window = view.window {
-            navigationItem.rightBarButtonItem?.tintColor = UIColor(light: Colors.primary(for: window), dark: Colors.textDominant)
+            navigationItem.rightBarButtonItem?.tintColor = .black // UIColor(light: Colors.primary(for: window), dark: Colors.textDominant)
         }
     }
 

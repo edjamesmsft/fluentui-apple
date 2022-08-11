@@ -59,7 +59,7 @@ class NotificationViewDemoController: DemoController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = Colors.surfaceSecondary
+        view.backgroundColor = UIColor.black // Colors.surfaceSecondary
 
         addTitle(text: "SwiftUI Demo")
         container.addArrangedSubview(createButton(title: "Show", action: #selector(showSwiftUIDemo)))

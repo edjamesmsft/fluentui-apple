@@ -35,7 +35,7 @@ class TableViewHeaderFooterViewDemoController: DemoController {
         navigationController?.navigationBar.shadowImage = UIImage()
         container.addArrangedSubview(segmentedControl)
         container.setCustomSpacing(8, after: segmentedControl)
-        container.backgroundColor = Colors.navigationBarBackground
+        container.backgroundColor = UIColor.black // Colors.navigationBarBackground
 
         let separator = Separator(style: .shadow, orientation: .horizontal)
         container.addArrangedSubview(separator)
@@ -57,7 +57,7 @@ class TableViewHeaderFooterViewDemoController: DemoController {
         tableView.register(TableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: TableViewHeaderFooterView.identifier)
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.backgroundColor = Colors.tableBackground
+        tableView.backgroundColor = .black // Colors.tableBackground
         tableView.separatorStyle = .none
         return tableView
     }
@@ -129,7 +129,7 @@ extension TableViewHeaderFooterViewDemoController: UITableViewDelegate {
     private func createCustomAccessoryView() -> UIView {
         let button = UIButton(type: .system)
         button.setTitle("Custom Accessory", for: .normal)
-        button.setTitleColor(Colors.error, for: .normal)
+        button.setTitleColor(.black /*Colors.error*/, for: .normal)
         return button
     }
 

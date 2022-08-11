@@ -76,22 +76,22 @@ class CommandBarButton: UIButton {
 
     private var selectedTintColor: UIColor {
         guard let window = window else {
-            return UIColor(light: Colors.communicationBlue,
-                           dark: .black)
+            return .black // UIColor(light: Colors.communicationBlue,
+                           // dark: .black)
         }
 
-        return UIColor(light: Colors.primary(for: window),
-                       dark: .black)
+        return .black // UIColor(light: Colors.primary(for: window),
+                       // dark: .black)
     }
 
     private var selectedBackgroundColor: UIColor {
         guard let window = window else {
-            return UIColor(light: Colors.Palette.communicationBlueTint30.color,
-                           dark: Colors.Palette.communicationBlue.color)
+            return .black // UIColor(light: Colors.Palette.communicationBlueTint30.color,
+                           // dark: Colors.Palette.communicationBlue.color)
         }
 
-        return  UIColor(light: Colors.primaryTint30(for: window),
-                        dark: Colors.primary(for: window))
+        return .black // UIColor(light: Colors.primaryTint30(for: window),
+                        // dark: Colors.primary(for: window))
     }
 
     private func updateStyle() {
@@ -116,10 +116,10 @@ class CommandBarButton: UIButton {
     }
 
     private struct ColorConstants {
-        static let normalTintColor: UIColor = Colors.textPrimary
-        static let normalBackgroundColor = UIColor(light: Colors.gray50,
-                                                   dark: Colors.gray600)
-        static let highlightedBackgroundColor = UIColor(light: Colors.gray100,
-                                                        dark: Colors.gray900)
+        static let normalTintColor: UIColor = .black // Colors.textPrimary
+        static let normalBackgroundColor = UIColor.black // UIColor(light: Colors.gray50,
+                                                   // dark: Colors.gray600)
+        static let highlightedBackgroundColor = UIColor.black // UIColor(light: Colors.gray100,
+                                                        // dark: Colors.gray900)
     }
 }

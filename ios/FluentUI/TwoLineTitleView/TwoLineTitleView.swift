@@ -12,6 +12,7 @@ public protocol TwoLineTitleViewDelegate: AnyObject {
     func twoLineTitleViewDidTapOnTitle(_ twoLineTitleView: TwoLineTitleView)
 }
 
+/*
 extension Colors {
 
     // MARK: Navigation Colors
@@ -38,6 +39,7 @@ extension Colors {
         static var titleAccessoryDark = UIColor(light: iconSecondary, dark: iconPrimary)
     }
 }
+ */
 
 // MARK: - TwoLineTitleView
 
@@ -223,13 +225,13 @@ open class TwoLineTitleView: UIView {
     private func applyStyle(style: Style) {
         switch style {
         case .dark:
-            titleButtonLabel.textColor = Colors.TwoLineTitle.titleDark
-            subtitleButtonLabel.textColor = Colors.TwoLineTitle.subtitleDark
-            titleButtonImageView.tintColor = Colors.TwoLineTitle.titleAccessoryDark
+            titleButtonLabel.textColor = .black // Colors.TwoLineTitle.titleDark
+            subtitleButtonLabel.textColor = .black // Colors.TwoLineTitle.subtitleDark
+            titleButtonImageView.tintColor = .black // Colors.TwoLineTitle.titleAccessoryDark
         case .light:
-            titleButtonLabel.textColor = Colors.TwoLineTitle.titleLight
-            subtitleButtonLabel.textColor = Colors.TwoLineTitle.subtitleLight
-            titleButtonImageView.tintColor = Colors.TwoLineTitle.titleAccessoryLight
+            titleButtonLabel.textColor = .black // Colors.TwoLineTitle.titleLight
+            subtitleButtonLabel.textColor = .black // Colors.TwoLineTitle.subtitleLight
+            titleButtonImageView.tintColor = .black // Colors.TwoLineTitle.titleAccessoryLight
         }
 
         // unlike title accessory image view, subtitle accessory image view should be the same color as subtitle label

@@ -77,7 +77,7 @@ class PopupMenuItemCell: TableViewCell, PopupMenuItemTemplateCell {
     private let accessoryImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
-        imageView.tintColor = Colors.Table.Cell.image
+        imageView.tintColor = .black // Colors.Table.Cell.image
         return imageView
     }()
 

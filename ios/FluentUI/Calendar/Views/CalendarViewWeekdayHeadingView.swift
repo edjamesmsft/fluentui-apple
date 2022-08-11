@@ -73,7 +73,7 @@ class CalendarViewWeekdayHeadingView: UIView {
     override func didMoveToWindow() {
         super.didMoveToWindow()
         if let window = window {
-            backgroundColor = headerStyle == .dark ? Colors.primary(for: window) : Colors.Calendar.WeekdayHeading.Light.background
+            backgroundColor = .black // headerStyle == .dark ? Colors.primary(for: window) : Colors.Calendar.WeekdayHeading.Light.background
         }
     }
 
@@ -101,10 +101,10 @@ class CalendarViewWeekdayHeadingView: UIView {
 
             switch headerStyle {
             case .light:
-                label.textColor = (index == 0 || index == 6) ? Colors.Calendar.WeekdayHeading.Light.textWeekend : Colors.Calendar.WeekdayHeading.Light.textRegular
+                label.textColor = .black // (index == 0 || index == 6) ? Colors.Calendar.WeekdayHeading.Light.textWeekend : Colors.Calendar.WeekdayHeading.Light.textRegular
 
             case .dark:
-                label.textColor = (index == 0 || index == 6) ? Colors.Calendar.WeekdayHeading.Dark.textWeekend : Colors.Calendar.WeekdayHeading.Dark.textRegular
+                label.textColor = .black // (index == 0 || index == 6) ? Colors.Calendar.WeekdayHeading.Dark.textWeekend : Colors.Calendar.WeekdayHeading.Dark.textRegular
             }
 
             headingLabels.append(label)

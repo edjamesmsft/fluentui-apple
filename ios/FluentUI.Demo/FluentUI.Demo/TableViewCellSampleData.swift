@@ -171,7 +171,7 @@ class TableViewCellSampleData: TableViewSampleData {
         stackView.axis = .vertical
 
         let label = Label(style: .footnote)
-        label.textColor = Colors.textSecondary
+        label.textColor = .black // Colors.textSecondary
         label.text = text
         stackView.addArrangedSubview(label)
 
@@ -188,7 +188,7 @@ class TableViewCellSampleData: TableViewSampleData {
 
         if withBorder {
             container.layer.borderWidth = 1 / UIScreen.main.scale // calculated device pixel
-            container.layer.borderColor = Colors.textSecondary.cgColor
+            container.layer.borderColor = UIColor.black.cgColor // Colors.textSecondary.cgColor
             container.layer.cornerRadius = 3
         }
 

@@ -105,7 +105,7 @@ class TableViewCellDemoController: DemoTableViewController {
     }
 
     private func updateTableView() {
-        tableView.backgroundColor = isGrouped ? Colors.tableBackgroundGrouped : Colors.tableBackground
+        tableView.backgroundColor = UIColor.black // isGrouped ? Colors.tableBackgroundGrouped : Colors.tableBackground
         tableView.reloadData()
     }
 }

@@ -126,7 +126,7 @@ class AvatarDemoController: DemoTableViewController {
                 cell.contentView.bottomAnchor.constraint(equalTo: avatarContentView.bottomAnchor)
             ])
 
-            cell.backgroundConfiguration?.backgroundColor = self.isUsingAlternateBackgroundColor ? Colors.tableCellBackgroundSelected : Colors.tableCellBackground
+            cell.backgroundConfiguration?.backgroundColor = .black // self.isUsingAlternateBackgroundColor ? Colors.tableCellBackgroundSelected : Colors.tableCellBackground
 
             return cell
         }

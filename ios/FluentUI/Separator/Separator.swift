@@ -6,7 +6,7 @@
 import UIKit
 
 // MARK: Separator Colors
-
+/*
 public extension Colors {
     struct Separator {
         public static var `default`: UIColor = dividerOnPrimary
@@ -15,7 +15,7 @@ public extension Colors {
     // Objective-C support
     @objc static var separatorDefault: UIColor { return Separator.default }
 }
-
+*/
 // MARK: - SeparatorStyle
 
 @objc(MSFSeparatorStyle)
@@ -26,9 +26,9 @@ public enum SeparatorStyle: Int {
     fileprivate var color: UIColor {
         switch self {
         case .default:
-            return Colors.Separator.default
+            return .black // Colors.Separator.default
         case .shadow:
-            return Colors.Separator.shadow
+            return .black // Colors.Separator.shadow
         }
     }
 }

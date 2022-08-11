@@ -76,7 +76,7 @@ open class ShimmerView: UIView {
 
     /// Tint color of the view if shimmer is revealing shimmer
     /// Tint color of the middle of the gradient if shimmer is concealing shimmer
-    @objc open var viewTintColor: UIColor = Colors.Shimmer.tint {
+    @objc open var viewTintColor: UIColor = .black {// Colors.Shimmer.tint {
         didSet {
             setNeedsLayout()
         }
@@ -250,7 +250,7 @@ open class ShimmerView: UIView {
     /// Update the gradient layer that animates to provide the shimmer effect (also updates the animation)
     func updateShimmeringLayer() {
         let light = UIColor.white.withAlphaComponent(shimmerAlpha).cgColor
-        let dark = Colors.Shimmer.darkGradient.cgColor
+        let dark = UIColor.black.cgColor // Colors.Shimmer.darkGradient.cgColor
         shimmeringLayer.colors = shimmerStyle == .concealing ? [light, dark, light] : [dark, light, dark]
 
         let isRTL = effectiveUserInterfaceLayoutDirection == .rightToLeft
@@ -341,7 +341,7 @@ open class ShimmerView: UIView {
 
     private static let defaultShimmersLeafViews: Bool = false
 }
-
+/*
 public extension Colors {
     struct Shimmer {
         internal static var darkGradient: UIColor = .black
@@ -349,3 +349,4 @@ public extension Colors {
         public static var tint = UIColor(light: surfaceTertiary, lightHighContrast: Colors.Palette.gray400.color, dark: surfaceQuaternary, darkHighContrast: Colors.Palette.gray400.color)
     }
 }
+*/

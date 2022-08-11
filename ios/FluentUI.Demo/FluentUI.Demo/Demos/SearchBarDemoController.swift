@@ -15,7 +15,7 @@ class SearchBarDemoController: DemoController, SearchBarDelegate {
     private lazy var badgeView: UIView = {
         let dataSource = BadgeViewDataSource(text: "Kat Larsson")
         let badge = BadgeView(dataSource: dataSource)
-        badge.disabledBackgroundColor = Colors.Palette.blueMagenta20.color
+        badge.disabledBackgroundColor =  .black // Colors.Palette.blueMagenta20.color
         badge.disabledLabelTextColor = .white
         badge.isActive = false
         return badge

@@ -78,7 +78,7 @@ public enum TableViewCellBackgroundStyleType: Int {
 }
 
 // MARK: - Table Colors
-
+/*
 public extension Colors {
     internal struct Table {
         struct Cell {
@@ -108,6 +108,7 @@ public extension Colors {
     @objc static var tableCellBackgroundSelected: UIColor { return surfaceTertiary }
     @objc static var tableCellImage: UIColor { return iconSecondary }
 }
+ */
 
 // MARK: - TableViewCell
 

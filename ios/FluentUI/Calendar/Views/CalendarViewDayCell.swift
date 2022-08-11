@@ -96,11 +96,11 @@ class CalendarViewDayCell: UICollectionViewCell {
         dateLabel = UILabel(frame: .zero)
         dateLabel.font = UIFontMetrics.default.scaledFont(for: Fonts.body, maximumPointSize: Constants.maximumFontSize)
         dateLabel.textAlignment = .center
-        dateLabel.textColor = Colors.Calendar.Day.textPrimary
+        dateLabel.textColor = .black // Colors.Calendar.Day.textPrimary
         dateLabel.showsLargeContentViewer = true
 
         dotView = DotView()
-        dotView.color = Colors.Calendar.Day.textPrimary
+        dotView.color = .black // Colors.Calendar.Day.textPrimary
         dotView.alpha = 0.0  // Initial `visualState` is `.Normal` without dots
         dotView.isUserInteractionEnabled = false
 
@@ -187,21 +187,21 @@ class CalendarViewDayCell: UICollectionViewCell {
     private func updateViews() {
         switch textStyle {
         case .primary:
-            dateLabel.textColor = Colors.Calendar.Day.textPrimary
+            dateLabel.textColor = .black // Colors.Calendar.Day.textPrimary
         case .secondary:
-            dateLabel.textColor = Colors.Calendar.Day.textSecondary
+            dateLabel.textColor = .black // Colors.Calendar.Day.textSecondary
         }
 
         switch backgroundStyle {
         case .primary:
-            contentView.backgroundColor = Colors.Calendar.Day.backgroundPrimary
+            contentView.backgroundColor = .black // Colors.Calendar.Day.backgroundPrimary
         case .secondary:
-            contentView.backgroundColor = Colors.Calendar.Day.backgroundSecondary
+            contentView.backgroundColor = .black // Colors.Calendar.Day.backgroundSecondary
         }
 
         if isHighlighted || isSelected {
             dotView.isHidden = true
-            dateLabel.textColor = Colors.Calendar.Day.textSelected
+            dateLabel.textColor = .black // Colors.Calendar.Day.textSelected
         } else {
             dotView.isHidden = false
         }
@@ -239,9 +239,9 @@ private class SelectionOverlayView: UIView {
     private var activeColor: UIColor {
         if selected,
             let window = window {
-            return Colors.primary(for: window)
+            return .black // Colors.primary(for: window)
         }
-        return Colors.Calendar.Day.circleHighlighted
+        return .black // Colors.Calendar.Day.circleHighlighted
     }
 
     // Lazy load views as every additional subview impacts the "Calendar"

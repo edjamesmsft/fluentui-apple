@@ -135,7 +135,7 @@ class BottomSheetDemoController: UIViewController {
     private lazy var personaListView: UIScrollView = {
         let personaListView = PersonaListView()
         personaListView.personaList = samplePersonas
-        personaListView.backgroundColor = Colors.navigationBarBackground
+        personaListView.backgroundColor = .black // Colors.navigationBarBackground
         personaListView.translatesAutoresizingMaskIntoConstraints = false
         return personaListView
     }()
@@ -146,7 +146,7 @@ class BottomSheetDemoController: UIViewController {
         view.addSubview(personaListView)
 
         let bottomView = UIView()
-        bottomView.backgroundColor = Colors.surfaceQuaternary
+        bottomView.backgroundColor = .black // Colors.surfaceQuaternary
         bottomView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(bottomView)
 
@@ -173,7 +173,7 @@ class BottomSheetDemoController: UIViewController {
 
     private let headerView: UIView = {
         let view = UIView()
-        view.backgroundColor = Colors.surfaceQuaternary
+        view.backgroundColor = .black // Colors.surfaceQuaternary
 
         let label = Label()
         label.text = "Header view"

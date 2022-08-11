@@ -52,13 +52,13 @@ class BadgeViewDemoController: DemoController {
             let badge = createBadge(text: "Kat Larsson", style: style, size: size, isEnabled: isEnabled)
             if overrideColor {
                 if isEnabled {
-                    badge.backgroundColor = Colors.Palette.blueMagenta20.color
-                    badge.selectedBackgroundColor = Colors.Palette.cyanBlue20.color
-                    badge.labelTextColor = Colors.Palette.gray50.color
-                    badge.selectedLabelTextColor = Colors.Palette.gray100.color
+                    badge.backgroundColor = .black // Colors.Palette.blueMagenta20.color
+                    badge.selectedBackgroundColor = .black // Colors.Palette.cyanBlue20.color
+                    badge.labelTextColor = .black // Colors.Palette.gray50.color
+                    badge.selectedLabelTextColor = .black // Colors.Palette.gray100.color
                 } else {
-                    badge.disabledBackgroundColor = Colors.Palette.gray100.color
-                    badge.disabledLabelTextColor = Colors.Palette.gray600.color
+                    badge.disabledBackgroundColor = .black // Colors.Palette.gray100.color
+                    badge.disabledLabelTextColor = .black // Colors.Palette.gray600.color
                 }
             }
             addRow(text: size.description, items: [badge])
@@ -90,7 +90,7 @@ class BadgeViewDemoController: DemoController {
                 customView: customView,
                 customViewVerticalPadding: 3
             )
-            badge.disabledBackgroundColor = Colors.Palette.blueMagenta20.color
+            badge.disabledBackgroundColor = .black // Colors.Palette.blueMagenta20.color
             badge.disabledLabelTextColor = .white
 
             addRow(text: size.description, items: [badge])

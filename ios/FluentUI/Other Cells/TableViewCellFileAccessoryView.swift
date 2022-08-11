@@ -225,7 +225,7 @@ open class TableViewCellFileAccessoryView: UIView {
 
     private func updateSharedStatus() {
         let imageName = isShared ? "ic_fluent_people_24_regular" : "ic_fluent_person_24_regular"
-        sharedStatusImageView.image = UIImage.staticImageNamed(imageName)?.withTintColor(Colors.gray500, renderingMode: .alwaysOriginal)
+        sharedStatusImageView.image = UIImage.staticImageNamed(imageName)?.withTintColor(.black) // Colors.gray500, renderingMode: .alwaysOriginal)
         sharedStatusLabel.text = isShared ? "Common.Shared".localized : "Common.OnlyMe".localized
     }
 
@@ -490,11 +490,11 @@ private class FileAccessoryViewActionView: UIButton {
         setImage(action.image, for: .normal)
 
         if action.useAppPrimaryColor {
-            tintColor = Colors.primary(for: window)
+            tintColor = .black // Colors.primary(for: window)
         } else if action.isEnabled {
-            tintColor = Colors.iconSecondary
+            tintColor = .black // Colors.iconSecondary
         } else {
-            tintColor = Colors.iconDisabled
+            tintColor = .black // Colors.iconDisabled
         }
 
         NSLayoutConstraint.activate([

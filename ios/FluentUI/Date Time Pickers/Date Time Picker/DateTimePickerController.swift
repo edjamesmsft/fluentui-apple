@@ -120,7 +120,7 @@ class DateTimePickerController: UIViewController, GenericDateTimePicker {
             view.addSubview(segmentedControl)
             // Hide default bottom border of navigation bar
             navigationController?.navigationBar.shadowImage = UIImage()
-            view.backgroundColor = Colors.Toolbar.background
+            view.backgroundColor = .black // Colors.Toolbar.background
         }
         view.addSubview(dateTimePickerView)
         dateTimePickerView.setupComponents(for: self)
@@ -143,7 +143,7 @@ class DateTimePickerController: UIViewController, GenericDateTimePicker {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if let window = view.window {
-            navigationItem.rightBarButtonItem?.tintColor = UIColor(light: Colors.primary(for: window), dark: Colors.textDominant)
+            navigationItem.rightBarButtonItem?.tintColor = .black // UIColor(light: Colors.primary(for: window), dark: Colors.textDominant)
         }
     }
 

@@ -859,13 +859,13 @@ open class BottomCommandingController: UIViewController {
         static let heroButtonLabelMaxWidth: CGFloat = 72
         static let heroButtonMaxTitleLines: Int = 2
 
-        static let tableViewIconTintColor: UIColor = Colors.textSecondary
-        static let tableViewBackgroundColor: UIColor = Colors.NavigationBar.background
+        static let tableViewIconTintColor: UIColor = .black // Colors.textSecondary
+        static let tableViewBackgroundColor: UIColor = .black // Colors.NavigationBar.background
 
         struct BottomBar {
             static let height: CGFloat = 80
             static let cornerRadius: CGFloat = 14
-            static let backgroundColor: UIColor = Colors.NavigationBar.background
+            static let backgroundColor: UIColor = .black // Colors.NavigationBar.background
 
             static let bottomOffset: CGFloat = 10
             static let hiddenBottomOffset: CGFloat = -110

@@ -146,7 +146,7 @@ class CommandBarDemoController: DemoController {
     let textField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.backgroundColor = Colors.navigationBarBackground
+        textField.backgroundColor = UIColor.black // Colors.navigationBarBackground
         textField.placeholder = "Text Field"
 
         return textField
@@ -156,20 +156,20 @@ class CommandBarDemoController: DemoController {
         super.viewDidLoad()
         container.layoutMargins.right = 0
         container.layoutMargins.left = 0
-        view.backgroundColor = Colors.surfaceSecondary
+        view.backgroundColor = .black // Colors.surfaceSecondary
 
         container.addArrangedSubview(createLabelWithText("Default"))
 
         let commandBar = CommandBar(itemGroups: createItemGroups(), leadingItemGroups: [[newItem(for: .keyboard)]])
         commandBar.translatesAutoresizingMaskIntoConstraints = false
-        commandBar.backgroundColor = Colors.navigationBarBackground
+        commandBar.backgroundColor = .black // Colors.navigationBarBackground
         container.addArrangedSubview(commandBar)
         defaultCommandBar = commandBar
 
         let itemCustomizationContainer = UIStackView()
         itemCustomizationContainer.spacing = CommandBarDemoController.verticalStackViewSpacing
         itemCustomizationContainer.axis = .vertical
-        itemCustomizationContainer.backgroundColor = Colors.navigationBarBackground
+        itemCustomizationContainer.backgroundColor = .black // Colors.navigationBarBackground
 
         itemCustomizationContainer.addArrangedSubview(UIView()) //Spacer
 
@@ -217,13 +217,13 @@ class CommandBarDemoController: DemoController {
 
         let fixedButtonCommandBar = CommandBar(itemGroups: createItemGroups(), leadingItemGroups: [[newItem(for: .copy)]], trailingItemGroups: [[newItem(for: .keyboard)]])
         fixedButtonCommandBar.translatesAutoresizingMaskIntoConstraints = false
-        fixedButtonCommandBar.backgroundColor = Colors.navigationBarBackground
+        fixedButtonCommandBar.backgroundColor = .black // Colors.navigationBarBackground
         container.addArrangedSubview(fixedButtonCommandBar)
 
         container.addArrangedSubview(createLabelWithText("In Input Accessory View"))
 
         let textFieldContainer = UIView()
-        textFieldContainer.backgroundColor = Colors.navigationBarBackground
+        textFieldContainer.backgroundColor = .black // Colors.navigationBarBackground
         textFieldContainer.addSubview(textField)
         NSLayoutConstraint.activate([
             textField.topAnchor.constraint(equalTo: textFieldContainer.topAnchor, constant: 16.0),

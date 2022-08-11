@@ -22,7 +22,7 @@ class SegmentedControlDemoController: DemoController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = Colors.surfaceSecondary
+        view.backgroundColor = UIColor.black // Colors.surfaceSecondary
 
         container.layoutMargins.left = 0
         container.layoutMargins.right = 0
@@ -69,9 +69,9 @@ class SegmentedControlDemoController: DemoController {
 
         let backgroundView = UIView()
         if style == .primaryPill {
-            backgroundView.backgroundColor = Colors.navigationBarBackground
+            backgroundView.backgroundColor = UIColor.black // Colors.navigationBarBackground
         } else {
-            backgroundView.backgroundColor = UIColor(light: Colors.communicationBlue, dark: Colors.navigationBarBackground)
+            backgroundView.backgroundColor = UIColor.black // UIColor(light: Colors.communicationBlue, dark: Colors.navigationBarBackground)
         }
 
         backgroundView.translatesAutoresizingMaskIntoConstraints = false

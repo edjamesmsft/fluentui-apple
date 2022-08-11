@@ -97,7 +97,7 @@ public enum ButtonStyle: Int, CaseIterable {
 }
 
 // MARK: - Button Colors
-
+/*
 public extension Colors {
     struct Button {
         public static var background: UIColor = .clear
@@ -107,7 +107,7 @@ public extension Colors {
         public static var titleWithFilledBackground: UIColor = textOnAccent
     }
 }
-
+*/
 // MARK: - Button
 
 /// By default, `titleLabel`'s `adjustsFontForContentSizeCategory` is set to true to automatically update its font when device's content size category changes
@@ -329,22 +329,22 @@ open class Button: UIButton {
 
     private func normalTitleAndImageColor(for window: UIWindow) -> UIColor {
         if style.isFilledStyle {
-            return Colors.Button.titleWithFilledBackground
+            return .black // Colors.Button.titleWithFilledBackground
         }
 
-        return style.isDangerStyle ? Colors.Palette.dangerPrimary.color : Colors.primary(for: window)
+        return style.isDangerStyle ? .black : .black // Colors.Palette.dangerPrimary.color : Colors.primary(for: window)
     }
 
     private func highlightedTitleAndImageColor(for window: UIWindow) -> UIColor {
         if style.isFilledStyle {
-            return Colors.Button.titleWithFilledBackground
+            return .black // Colors.Button.titleWithFilledBackground
         }
 
-        return style.isDangerStyle ? Colors.Palette.dangerTint20.color : Colors.primaryTint20(for: window)
+        return style.isDangerStyle ? .black : .black // Colors.Palette.dangerTint20.color : Colors.primaryTint20(for: window)
     }
 
     private func disabledTitleAndImageColor(for window: UIWindow) -> UIColor {
-        return style.isFilledStyle ? Colors.Button.titleWithFilledBackground : Colors.Button.titleDisabled
+        return style.isFilledStyle ? .black : .black // Colors.Button.titleWithFilledBackground : Colors.Button.titleDisabled
     }
 
     private var normalImageTintColor: UIColor?
@@ -406,25 +406,25 @@ open class Button: UIButton {
         let backgroundColor: UIColor
 
         if !isEnabled {
-            backgroundColor = style.isFilledStyle ? Colors.Button.backgroundFilledDisabled : Colors.Button.background
+            backgroundColor = style.isFilledStyle ? .black : .black // Colors.Button.backgroundFilledDisabled : Colors.Button.background
         } else {
             switch style {
             case .primaryFilled:
                 backgroundColor = isHighlighted || isFocused
-                ? UIColor(light: Colors.primaryTint10(for: window),
-                          dark: Colors.primaryTint20(for: window))
-                : Colors.primary(for: window)
+                ? UIColor(light: .black, // Colors.primaryTint10(for: window),
+                          dark: .black) // Colors.primaryTint20(for: window))
+                : .black // Colors.primary(for: window)
             case .dangerFilled:
                 backgroundColor = isHighlighted || isFocused
-                ? UIColor(light: Colors.Palette.dangerTint10.color,
-                          dark: Colors.Palette.dangerTint20.color)
-                : Colors.Palette.dangerPrimary.color
+                ? UIColor(light: .black, // Colors.Palette.dangerTint10.color,
+                          dark: .black) // Colors.Palette.dangerTint20.color)
+                : .black // Colors.Palette.dangerPrimary.color
             case .primaryOutline,
                     .dangerOutline,
                     .secondaryOutline,
                     .tertiaryOutline,
                     .borderless:
-                backgroundColor = Colors.Button.background
+                backgroundColor = .black // Colors.Button.background
             }
         }
 
@@ -440,11 +440,11 @@ open class Button: UIButton {
             let borderColor: UIColor
 
             if !isEnabled {
-                borderColor = Colors.Button.borderDisabled
+                borderColor = .black // Colors.Button.borderDisabled
             } else if isHighlighted {
-                borderColor = style.isDangerStyle ? Colors.Palette.dangerTint30.color : Colors.primaryTint30(for: window)
+                borderColor = style.isDangerStyle ? .black : .black // Colors.Palette.dangerTint30.color : Colors.primaryTint30(for: window)
             } else {
-                borderColor = style.isDangerStyle ? Colors.Palette.dangerTint10.color : Colors.primaryTint10(for: window)
+                borderColor = style.isDangerStyle ? .black : .black // Colors.Palette.dangerTint10.color : Colors.primaryTint10(for: window)
             }
 
             layer.borderColor = borderColor.cgColor

@@ -77,17 +77,17 @@ class PillButtonBarDemoController: DemoController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if let window = view.window {
-            onBrandBar?.backgroundColor = UIColor(light: Colors.primary(for: window), dark: Colors.navigationBarBackground)
-            customBar?.backgroundColor = UIColor(light: Colors.primary(for: window), dark: Colors.navigationBarBackground)
+            onBrandBar?.backgroundColor = UIColor.black // UIColor(light: Colors.primary(for: window), dark: Colors.navigationBarBackground)
+            customBar?.backgroundColor = UIColor.black // UIColor(light: Colors.primary(for: window), dark: Colors.navigationBarBackground)
         }
     }
 
     func createBar(items: [PillButtonBarItem], style: PillButtonStyle = .primary, centerAligned: Bool = false, disabledItems: Bool = false, useCustomPillsColors: Bool = false) -> UIView {
-        let pillButtonBackgroundColor = useCustomPillsColors ? Colors.textOnAccent : nil
-        let pillSelectedButtonBackgroundColor = useCustomPillsColors ? Colors.textPrimary : nil
-        let pillButtonTextColor = useCustomPillsColors ? Colors.textPrimary : nil
-        let pillSelectedButtontextColor = useCustomPillsColors ? Colors.textOnAccent : nil
-        let pillButtonUnreadDotColor = useCustomPillsColors ? Colors.textPrimary : nil
+        let pillButtonBackgroundColor = UIColor.black //  useCustomPillsColors ? Colors.textOnAccent : nil
+        let pillSelectedButtonBackgroundColor = UIColor.black //  useCustomPillsColors ? Colors.textPrimary : nil
+        let pillButtonTextColor = UIColor.black //  useCustomPillsColors ? Colors.textPrimary : nil
+        let pillSelectedButtontextColor = UIColor.black // useCustomPillsColors ? Colors.textOnAccent : nil
+        let pillButtonUnreadDotColor = UIColor.black //  useCustomPillsColors ? Colors.textPrimary : nil
 
         let bar = PillButtonBar(pillButtonStyle: style, pillButtonBackgroundColor: pillButtonBackgroundColor, selectedPillButtonBackgroundColor: pillSelectedButtonBackgroundColor, pillButtonTextColor: pillButtonTextColor, selectedPillButtonTextColor: pillSelectedButtontextColor, pillButtonUnreadDotColor: pillButtonUnreadDotColor)
         bar.items = items
@@ -101,7 +101,7 @@ class PillButtonBarDemoController: DemoController {
 
         let backgroundView = UIView()
         if style == .primary {
-            backgroundView.backgroundColor = Colors.navigationBarBackground
+            backgroundView.backgroundColor = UIColor.black // Colors.navigationBarBackground
         }
 
         backgroundView.addSubview(bar)

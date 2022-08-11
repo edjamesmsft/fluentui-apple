@@ -10,7 +10,7 @@ import FluentUIResources
 import UIKit
 
 // MARK: Colors
-
+/*
 public extension Colors {
     internal struct Progress {
         static var trackTint = UIColor(light: surfaceQuaternary, dark: surfaceTertiary)
@@ -30,7 +30,7 @@ public extension Colors {
     // Objective-C support
     @objc static var navigationBarBackground: UIColor { return NavigationBar.background }
 }
-
+*/
 // MARK: - FluentUIFramework
 
 public class FluentUIFramework: NSObject {
@@ -58,7 +58,7 @@ public class FluentUIFramework: NSObject {
 
     @available(*, deprecated, renamed: "initializeAppearance(with:whenContainedInInstancesOf:)")
     @objc public static func initializeAppearance() {
-        initializeAppearance(with: Colors.primary)
+        initializeAppearance(with: .black) // Colors.primary)
     }
 
     @objc public static func initializeAppearance(with primaryColor: UIColor, whenContainedInInstancesOf containerTypes: [UIAppearanceContainer.Type]? = nil) {
@@ -74,8 +74,8 @@ public class FluentUIFramework: NSObject {
         // UIToolbar
         let toolbar = UIToolbar.appearance()
         toolbar.isTranslucent = false
-        toolbar.barTintColor = Colors.Toolbar.background
-        toolbar.tintColor = Colors.Toolbar.tint
+        toolbar.barTintColor = .black // Colors.Toolbar.background
+        toolbar.tintColor = .black // Colors.Toolbar.tint
 
         // UIBarButtonItem
         let barButtonItem = UIBarButtonItem.appearance()
@@ -88,16 +88,16 @@ public class FluentUIFramework: NSObject {
 
         let progressViewAppearance = containerTypes != nil ? UIProgressView.appearance(whenContainedInInstancesOf: containerTypes!) : UIProgressView.appearance()
         progressViewAppearance.progressTintColor = primaryColor
-        progressViewAppearance.trackTintColor = Colors.Progress.trackTint
+        progressViewAppearance.trackTintColor = .black // Colors.Progress.trackTint
     }
 
     static func initializeUINavigationBarAppearance(_ navigationBar: UINavigationBar, traits: UITraitCollection? = nil) {
         navigationBar.isTranslucent = false
 
         let standardAppearance = navigationBar.standardAppearance
-        navigationBar.tintColor = Colors.NavigationBar.tint
+        navigationBar.tintColor = .black // Colors.NavigationBar.tint
 
-        navigationBar.standardAppearance.backgroundColor = Colors.NavigationBar.background
+        navigationBar.standardAppearance.backgroundColor = .black // Colors.NavigationBar.background
 
         let traits = traits ?? navigationBar.traitCollection
         // Removing built-in shadow for Dark Mode
@@ -105,7 +105,7 @@ public class FluentUIFramework: NSObject {
 
         var titleAttributes = standardAppearance.titleTextAttributes
         titleAttributes[.font] = Fonts.headline
-        titleAttributes[.foregroundColor] = Colors.NavigationBar.title
+        titleAttributes[.foregroundColor] = UIColor.black // Colors.NavigationBar.title
         standardAppearance.titleTextAttributes = titleAttributes
 
         navigationBar.backIndicatorImage = UIImage.staticImageNamed("back-24x24")

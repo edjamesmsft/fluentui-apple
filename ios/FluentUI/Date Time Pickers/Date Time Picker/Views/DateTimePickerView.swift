@@ -50,7 +50,7 @@ class DateTimePickerView: UIControl {
 
     private let gradientLayer: CAGradientLayer = {
         let gradientLayer = CAGradientLayer()
-        let backgroundColor = Colors.DateTimePicker.background
+        let backgroundColor = UIColor.black // Colors.DateTimePicker.background
         let transparentColor = backgroundColor.withAlphaComponent(0)
         gradientLayer.colors = [backgroundColor.cgColor, transparentColor.cgColor, transparentColor.cgColor, backgroundColor.cgColor]
         gradientLayer.startPoint = CGPoint(x: 0, y: 0)
@@ -71,7 +71,7 @@ class DateTimePickerView: UIControl {
         addSubview(selectionBottomSeparator)
         addInteraction(UILargeContentViewerInteraction())
 
-        backgroundColor = Colors.DateTimePicker.background
+        backgroundColor = .black // Colors.DateTimePicker.background
 
         setDate(date, animated: false)
         setDayOfMonth(dayOfMonth, animated: false)

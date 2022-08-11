@@ -63,7 +63,7 @@ open class PillButton: UIButton {
                                                object: pillBarItem)
     }
 
-    var unreadDotColor: UIColor = Colors.gray100
+    var unreadDotColor: UIColor = .black // Colors.gray100
 
     @objc public static let cornerRadius: CGFloat = 16.0
 

@@ -8,12 +8,12 @@ import UIKit
 
 class DemoListViewController: DemoTableViewController {
 
-    private var provider: ColorProviding? = DemoColorTheme.default.provider
-    public var theme: DemoColorTheme = DemoColorTheme.default {
-        didSet {
+    // private var provider: ColorProviding? = DemoColorTheme.default.provider
+    public var theme: DemoColorTheme = DemoColorTheme.default // {
+        /*didSet {
             provider = theme.provider
-        }
-    }
+        }*/
+    // }
 
     func addDemoListTo(window: UIWindow) {
         updateColorProviderFor(window: window, theme: self.theme)
@@ -31,12 +31,12 @@ class DemoListViewController: DemoTableViewController {
 
     func updateColorProviderFor(window: UIWindow, theme: DemoColorTheme) {
         self.theme = theme
-        if let provider = self.provider, let primaryColor = provider.primaryColor(for: window) {
-            Colors.setProvider(provider: provider, for: window)
-            FluentUIFramework.initializeAppearance(with: primaryColor, whenContainedInInstancesOf: [type(of: window)])
-        } else {
-            FluentUIFramework.initializeAppearance(with: Colors.primary(for: window))
-        }
+        // if let provider = self.provider, let primaryColor = provider.primaryColor(for: window) {
+            // Colors.setProvider(provider: provider, for: window)
+            // FluentUIFramework.initializeAppearance(with: UIColor.black /* primaryColor*/, whenContainedInInstancesOf: [type(of: window)])
+        // } else {
+            FluentUIFramework.initializeAppearance(with: UIColor.black) // Colors.primary(for: window))
+        // }
     }
 
     override func viewDidLoad() {

@@ -23,7 +23,7 @@ class BadgeLabel: UILabel {
     /// Base function for initialization
     private func initBase() {
         layer.masksToBounds = true
-        backgroundColor = Colors.Palette.dangerPrimary.color
+        backgroundColor = .black // Colors.Palette.dangerPrimary.color
         textColor = .white
         textAlignment = .center
         font = UIFont.systemFont(ofSize: Constants.badgeFontSize, weight: .regular)
@@ -36,8 +36,8 @@ class BadgeLabel: UILabel {
         guard shouldUseWindowColor, let window = window else {
             return
         }
-        textColor = UIColor(light: Colors.primary(for: window), dark: .white)
-        backgroundColor = UIColor(light: .white, dark: Colors.primary(for: window))
+        textColor = .black // UIColor(light: Colors.primary(for: window), dark: .white)
+        backgroundColor = .black // UIColor(light: .white, dark: Colors.primary(for: window))
     }
 
     private struct Constants {

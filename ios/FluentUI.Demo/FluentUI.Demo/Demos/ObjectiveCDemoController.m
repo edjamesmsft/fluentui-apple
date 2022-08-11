@@ -21,7 +21,7 @@
     self.container = [self createVerticalContainer];
     self.scrollingContainer = [[UIScrollView alloc] initWithFrame:CGRectZero];
 
-    self.view.backgroundColor = MSFColors.surfacePrimary;
+    // self.view.backgroundColor = MSFColors.surfacePrimary;
     [self setupTitleView];
 
     [self.view addSubview:self.scrollingContainer];

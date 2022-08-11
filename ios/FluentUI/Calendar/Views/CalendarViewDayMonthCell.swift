@@ -6,7 +6,7 @@
 import UIKit
 
 // MARK: Calendar Colors
-
+/*
 public extension Colors {
     struct Calendar {
         public struct Day {
@@ -34,7 +34,7 @@ public extension Colors {
         public static var background = UIColor(light: surfacePrimary, dark: surfaceTertiary)
     }
 }
-
+*/
 // MARK: - CalendarViewDayMonthCell
 
 class CalendarViewDayMonthCell: CalendarViewDayCell {
@@ -62,7 +62,7 @@ class CalendarViewDayMonthCell: CalendarViewDayCell {
         monthLabel = UILabel(frame: CGRect.zero)
         monthLabel.font = Fonts.caption1.withSize(12)
         monthLabel.textAlignment = .center
-        monthLabel.textColor = Colors.Calendar.Day.textPrimary
+        monthLabel.textColor = .black // Colors.Calendar.Day.textPrimary
         monthLabel.showsLargeContentViewer = true
 
         super.init(frame: frame)
@@ -84,9 +84,9 @@ class CalendarViewDayMonthCell: CalendarViewDayCell {
 
         switch textStyle {
         case .primary:
-            monthLabel.textColor = Colors.Calendar.Day.textPrimary
+            monthLabel.textColor = .black // Colors.Calendar.Day.textPrimary
         case .secondary:
-            monthLabel.textColor = Colors.Calendar.Day.textSecondary
+            monthLabel.textColor = .black // Colors.Calendar.Day.textSecondary
         }
 
         monthLabel.text = monthLabelText
