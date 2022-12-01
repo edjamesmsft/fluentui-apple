@@ -373,6 +373,7 @@
 		C77A04B625F03DD1001B3EB6 /* String+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Date.swift"; sourceTree = "<group>"; };
 		C77A04EC25F046EB001B3EB6 /* Date+CellFileAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+CellFileAccessoryView.swift"; sourceTree = "<group>"; };
 		CCC18C2B2501B22F00BE830E /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		D630850929384345005AABE3 /* Colors2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors2.swift; sourceTree = "<group>"; };
 		EC1C31722923022E00CF052C /* SegmentedControlTokenSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControlTokenSet.swift; sourceTree = "<group>"; };
 		EC5982D727BF348700FD048D /* MSFAvatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MSFAvatar.swift; sourceTree = "<group>"; };
 		EC5982D927C703ED00FD048D /* CircleCutout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleCutout.swift; sourceTree = "<group>"; };
@@ -903,6 +904,7 @@
 			children = (
 				925D461926FD124B00179583 /* Theme */,
 				A5CEC16C20D98EE70016922A /* Colors.swift */,
+				D630850929384345005AABE3 /* Colors2.swift */,
 				923DB9D6274CB66D00D8E58A /* ControlHostingView.swift */,
 				A559BB82212B7D870055E107 /* FluentUIFramework.swift */,
 				535559E22711411E0094A871 /* FluentUIHostingController.swift */,
@@ -1282,6 +1284,7 @@
 					};
 					A5DA88FB226FAA01000A8EA8 = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1400;
 					};
 				};
 			};
@@ -1773,6 +1776,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 53FC90FA25673627008A06FD /* FluentUIResources.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -1780,6 +1791,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 53FC90FA25673627008A06FD /* FluentUIResources.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -1787,6 +1805,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 53FC90FA25673627008A06FD /* FluentUIResources.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				SWIFT_VERSION = 5.0;
 			};
 			name = Dogfood;
 		};
