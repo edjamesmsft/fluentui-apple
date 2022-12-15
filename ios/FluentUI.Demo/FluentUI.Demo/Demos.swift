@@ -24,8 +24,16 @@ struct Demos {
         DemoDescriptor("AvatarGroup", AvatarGroupDemoController.self),
         DemoDescriptor("Button", ButtonDemoController.self),
         DemoDescriptor("CardNudge", CardNudgeDemoController.self),
+<<<<<<< HEAD
         DemoDescriptor("CommandBar", CommandBarDemoController.self),
         DemoDescriptor("Divider", DividerDemoController.self),
+||||||| 086cef7a
+        DemoDescriptor("ColorTokens", ColorTokensDemoController.self),
+        DemoDescriptor("Divider", DividerDemoController.self),
+=======
+        DemoDescriptor("ColorTokens", ColorTokensDemoController.self),
+        DemoDescriptor("CommandBar", CommandBarDemoController.self),
+>>>>>>> main
         DemoDescriptor("HUD", HUDDemoController.self),
         DemoDescriptor("IndeterminateProgressBar", IndeterminateProgressBarDemoController.self),
         DemoDescriptor("NotificationView", NotificationViewDemoController.self),
