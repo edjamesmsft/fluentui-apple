@@ -75,7 +75,6 @@ class CommandBarButton: UIButton {
         }
 
         updateState()
-<<<<<<< HEAD
 
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(themeDidChange),
@@ -89,11 +88,6 @@ class CommandBarButton: UIButton {
         }
         updateStyle()
         isPointerInteractionEnabled = true
-||||||| 086cef7a
-=======
-
-        isPointerInteractionEnabled = true
->>>>>>> main
     }
 
     @available(*, unavailable)
