@@ -10,48 +10,16 @@ import UIKit
 
 class TableViewHeaderFooterViewDemoController: DemoController {
     private let groupedSections: [TableViewHeaderFooterSampleData.Section] = TableViewHeaderFooterSampleData.groupedSections
-    private let plainSections: [TableViewHeaderFooterSampleData.Section] = TableViewHeaderFooterSampleData.plainSections
-
-    private lazy var segmentedControl: SegmentedControl = {
-        let segmentedControl = SegmentedControl(items: TableViewHeaderFooterSampleData.tabTitles.map({return SegmentItem(title: $0)}), style: .primaryPill)
-        segmentedControl.onSelectAction = { [weak self] (_, _) in
-            guard let strongSelf = self else {
-                return
-            }
-
-            strongSelf.updateActiveTabContent()
-        }
-
-        return segmentedControl
-    }()
     private lazy var groupedTableView: UITableView = createTableView(style: .grouped)
     private var collapsedSections: [Bool] = [Bool](repeating: false, count: TableViewHeaderFooterSampleData.groupedSections.count)
-    private let divider = MSFDivider()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        container.heightAnchor.constraint(equalTo: scrollingContainer.heightAnchor).isActive = true
-        container.layoutMargins = .zero
-        container.spacing = 0
 
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.backgroundColor = Colors.navigationBarBackground
-        container.addArrangedSubview(segmentedControl)
-        container.setCustomSpacing(8, after: segmentedControl)
-        container.backgroundColor = Colors.navigationBarBackground
-
-        let separator = Separator(style: .shadow, orientation: .horizontal)
-        container.addArrangedSubview(separator)
-
-        container.addArrangedSubview(groupedTableView)
-        container.addArrangedSubview(plainTableView)
-
-        updateActiveTabContent()
-    }
-
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        navigationController?.navigationBar.shadowImage = nil
+        view.addSubview(groupedTableView)
+        groupedTableView.frame = view.bounds
+        groupedTableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        scrollingContainer.removeFromSuperview()
     }
 
     func createTableView(style: UITableView.Style) -> UITableView {
