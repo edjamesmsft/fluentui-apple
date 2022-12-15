@@ -3,14 +3,9 @@
 //  Licensed under the MIT License.
 //
 
-<<<<<<< HEAD
 import CoreGraphics
 import UIKit
-||||||| 086cef7a
-import CoreGraphics
-=======
 import Foundation
->>>>>>> main
 
 /// Represents a two-part shadow as used by FluentUI.
 @objc(MSFShadowInfo)
@@ -122,9 +117,4 @@ public protocol Shadowable {
 
     /// The layer on which the key shadow is implemented
     var shadow2: CALayer? { get set }
-||||||| 086cef7a
-    public let yTwo: CGFloat
-=======
-    @objc public let yTwo: CGFloat
->>>>>>> main
 }
