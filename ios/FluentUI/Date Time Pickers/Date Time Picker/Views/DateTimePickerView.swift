@@ -72,19 +72,9 @@ class DateTimePickerView: UIControl {
 
         super.init(frame: .zero)
 
-<<<<<<< HEAD
         gradientLayer = createGradientLayer()
         addSubview(selectionTopDivider)
         addSubview(selectionBottomDivider)
-||||||| 086cef7a
-        layer.addSublayer(gradientLayer)
-        addSubview(selectionTopDivider)
-        addSubview(selectionBottomDivider)
-=======
-        layer.addSublayer(gradientLayer)
-        addSubview(selectionTopSeparator)
-        addSubview(selectionBottomSeparator)
->>>>>>> main
         addInteraction(UILargeContentViewerInteraction())
 
         updateBackgroundColor()
