@@ -562,6 +562,7 @@
 				E6842996247C350700A29C40 /* DemoColorThemes.swift in Sources */,
 				A5CEC21020E436F10016922A /* AppDelegate.swift in Sources */,
 				53097D4227028AF000A6E4DC /* TabBarViewDemoController.swift in Sources */,
+				EC6A71EC273DE6DF0076A586 /* DividerDemoController.swift in Sources */,
 				B4414794228F6FDF0040E88E /* OtherCellsSampleData.swift in Sources */,
 				53097D4327028AF400A6E4DC /* TableViewCellFileAccessoryViewDemoController.swift in Sources */,
 				B444D6B82183BA4B0002B4D4 /* BadgeViewDemoController.swift in Sources */,
