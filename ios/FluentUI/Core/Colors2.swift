@@ -12,50 +12,78 @@ import UIKit
 @objc(MSFColorProviding2)
 public protocol ColorProviding2 {
     /// If this protocol is not conformed to, communicationBlue variants will be used
-    @objc func brandBackground1(for window: UIWindow) -> UIColor?
-    @objc func brandBackground1Pressed(for window: UIWindow) -> UIColor?
-    @objc func brandBackground1Selected(for window: UIWindow) -> UIColor?
-    @objc func brandBackground2(for window: UIWindow) -> UIColor?
-    @objc func brandBackground2Pressed(for window: UIWindow) -> UIColor?
-    @objc func brandBackground2Selected(for window: UIWindow) -> UIColor?
-    @objc func brandBackground3(for window: UIWindow) -> UIColor?
-    @objc func brandBackgroundTint(for window: UIWindow) -> UIColor?
-    @objc func brandForeground1(for window: UIWindow) -> UIColor?
-    @objc func brandForeground1Pressed(for window: UIWindow) -> UIColor?
-    @objc func brandForeground1Selected(for window: UIWindow) -> UIColor?
-    @objc func brandForegroundTint(for window: UIWindow) -> UIColor?
-    @objc func brandForegroundDisabled1(for window: UIWindow) -> UIColor?
-    @objc func brandForegroundDisabled2(for window: UIWindow) -> UIColor?
-    @objc func brandStroke1(for window: UIWindow) -> UIColor?
-    @objc func brandStroke1Pressed(for window: UIWindow) -> UIColor?
-    @objc func brandStroke1Selected(for window: UIWindow) -> UIColor?
+    @objc func brandBackground1(for theme: FluentTheme) -> UIColor?
+    @objc func brandBackground1Pressed(for theme: FluentTheme) -> UIColor?
+    @objc func brandBackground1Selected(for theme: FluentTheme) -> UIColor?
+    @objc func brandBackground2(for theme: FluentTheme) -> UIColor?
+    @objc func brandBackground2Pressed(for theme: FluentTheme) -> UIColor?
+    @objc func brandBackground2Selected(for theme: FluentTheme) -> UIColor?
+    @objc func brandBackground3(for theme: FluentTheme) -> UIColor?
+    @objc func brandBackgroundTint(for theme: FluentTheme) -> UIColor?
+    @objc func brandBackgroundDisabled(for theme: FluentTheme) -> UIColor?
+    @objc func brandForeground1(for theme: FluentTheme) -> UIColor?
+    @objc func brandForeground1Pressed(for theme: FluentTheme) -> UIColor?
+    @objc func brandForeground1Selected(for theme: FluentTheme) -> UIColor?
+    @objc func brandForegroundTint(for theme: FluentTheme) -> UIColor?
+    @objc func brandForegroundDisabled1(for theme: FluentTheme) -> UIColor?
+    @objc func brandForegroundDisabled2(for theme: FluentTheme) -> UIColor?
+    @objc func brandStroke1(for theme: FluentTheme) -> UIColor?
+    @objc func brandStroke1Pressed(for theme: FluentTheme) -> UIColor?
+    @objc func brandStroke1Selected(for theme: FluentTheme) -> UIColor?
 }
 
-private func brandColorOverrides(provider: ColorProviding, for window: UIWindow) -> [AliasTokens.BrandColorsTokens: DynamicColor] {
-    var brandColors: [AliasTokens.BrandColorsTokens: DynamicColor] = [:]
-    if let primary = provider.primaryColor(for: window)?.dynamicColor {
-        brandColors[.primary] = primary
+private func brandColorOverrides(provider: ColorProviding2, for theme: FluentTheme) -> [AliasTokens.ColorsTokens: DynamicColor] {
+    var brandColors: [AliasTokens.ColorsTokens: DynamicColor] = [:]
+    if let brandBackground1 = provider.brandBackground1(for: theme)?.dynamicColor {
+        brandColors[.brandBackground1] = brandBackground1
     }
-    if let tint10 = provider.primaryTint10Color(for: window)?.dynamicColor {
-        brandColors[.tint10] = tint10
+    if let brandBackground1Pressed = provider.brandBackground1Pressed(for: theme)?.dynamicColor {
+        brandColors[.brandBackground1Pressed] = brandBackground1Pressed
     }
-    if let tint20 = provider.primaryTint20Color(for: window)?.dynamicColor {
-        brandColors[.tint20] = tint20
+    if let brandBackground1Selected = provider.brandBackground1Selected(for: theme)?.dynamicColor {
+        brandColors[.brandBackground1Selected] = brandBackground1Selected
     }
-    if let tint30 = provider.primaryTint30Color(for: window)?.dynamicColor {
-        brandColors[.tint30] = tint30
+    if let brandBackground2 = provider.brandBackground2(for: theme)?.dynamicColor {
+        brandColors[.brandBackground2] = brandBackground2
     }
-    if let tint40 = provider.primaryTint40Color(for: window)?.dynamicColor {
-        brandColors[.tint40] = tint40
+    if let brandBackground2Pressed = provider.brandBackground2Pressed(for: theme)?.dynamicColor {
+        brandColors[.brandBackground2Pressed] = brandBackground2Pressed
     }
-    if let shade10 = provider.primaryShade10Color(for: window)?.dynamicColor {
-        brandColors[.shade10] = shade10
+    if let brandBackground2Selected = provider.brandBackground2Selected(for: theme)?.dynamicColor {
+        brandColors[.brandBackground2Selected] = brandBackground2Selected
     }
-    if let shade20 = provider.primaryShade20Color(for: window)?.dynamicColor {
-        brandColors[.shade20] = shade20
+    if let brandBackground3 = provider.brandBackground3(for: theme)?.dynamicColor {
+        brandColors[.brandBackground3] = brandBackground3
     }
-    if let shade30 = provider.primaryShade30Color(for: window)?.dynamicColor {
-        brandColors[.shade30] = shade30
+    if let brandBackgroundTint = provider.brandBackgroundTint(for: theme)?.dynamicColor {
+        brandColors[.brandBackgroundTint] = brandBackgroundTint
+    }
+    if let brandForeground1 = provider.brandForeground1(for: theme)?.dynamicColor {
+        brandColors[.brandForeground1] = brandForeground1
+    }
+    if let brandForeground1Pressed = provider.brandForeground1Pressed(for: theme)?.dynamicColor {
+        brandColors[.brandForeground1Pressed] = brandForeground1Pressed
+    }
+    if let brandForeground1Selected = provider.brandForeground1Selected(for: theme)?.dynamicColor {
+        brandColors[.brandForeground1Selected] = brandForeground1Selected
+    }
+    if let brandForegroundTint = provider.brandForegroundTint(for: theme)?.dynamicColor {
+        brandColors[.brandForegroundTint] = brandForegroundTint
+    }
+    if let brandForegroundDisabled1 = provider.brandForegroundDisabled1(for: theme)?.dynamicColor {
+        brandColors[.brandForegroundDisabled1] = brandForegroundDisabled1
+    }
+    if let brandForegroundDisabled2 = provider.brandForegroundDisabled2(for: theme)?.dynamicColor {
+        brandColors[.brandForegroundDisabled2] = brandForegroundDisabled2
+    }
+    if let brandStroke1 = provider.brandStroke1(for: theme)?.dynamicColor {
+        brandColors[.brandStroke1] = brandStroke1
+    }
+    if let brandStroke1Pressed = provider.brandStroke1Pressed(for: theme)?.dynamicColor {
+        brandColors[.brandStroke1Pressed] = brandStroke1Pressed
+    }
+    if let brandStroke1Selected = provider.brandStroke1Selected(for: theme)?.dynamicColor {
+        brandColors[.brandStroke1Selected] = brandStroke1Selected
     }
     return brandColors
 }
@@ -69,139 +97,134 @@ public final class Colors2: NSObject {
     /// - Parameters:
     ///   - provider: The `ColorProvider2` whose colors should be used for controls in this window.
     ///   - window: The window where these colors should be applied.
-    @objc public static func setProvider(provider: ColorProviding2, for window: UIWindow) {
-        colorProvidersMap.setObject(provider, forKey: window)
+    @objc public static func setProvider(provider: ColorProviding2, for theme: FluentTheme) {
+        colorProvidersMap.setObject(provider, forKey: theme)
 
         // Create an updated fluent theme as well
-        let brandColors = brandColorOverrides(provider: provider, for: window)
-        let fluentTheme = FluentTheme()
+        let brandColors = brandColorOverrides(provider: provider, for: theme)
         brandColors.forEach { token, value in
-            fluentTheme.aliasTokens.brandColors[token] = value
+            theme.aliasTokens.colors[token] = value
         }
-        window.fluentTheme = fluentTheme
     }
 
     /// Removes any associated `ColorProvider` from the given `UIWindow` instance.
     ///
     /// - Parameters:
     ///   - window: The window that should have its `ColorProvider` removed.
-    @objc public static func removeProvider(for window: UIWindow) {
-        colorProvidersMap.removeObject(forKey: window)
-        window.fluentTheme = FluentThemeKey.defaultValue
+    @objc public static func removeProvider(for theme: FluentTheme) {
+        colorProvidersMap.removeObject(forKey: theme)
+        // TODO: what is the equivalent function here?
+        // window.fluentTheme = FluentThemeKey.defaultValue
     }
 
     // MARK: Primary
 
     /// Use these funcs to grab a color customized by a ColorProviding object for a specific window. If no colorProvider exists for the window, falls back to deprecated singleton theme color
-    @objc public static func brandBackground1(for window: UIWindow) -> UIColor {
-        return colorProvidersMap.object(forKey: window)?.brandBackground1(for: window) ?? FallbackThemeColor.brandBackground1
+    @objc public static func brandBackground1(for theme: FluentTheme) -> UIColor {
+        return colorProvidersMap.object(forKey: theme)?.brandBackground1(for: theme) ?? FallbackThemeColor.brandBackground1
     }
 
-    @objc public static func brandBackground1Pressed(for window: UIWindow) -> UIColor {
-        return colorProvidersMap.object(forKey: window)?.brandBackground1Pressed(for: window) ?? FallbackThemeColor.brandBackground1Pressed
+    @objc public static func brandBackground1Pressed(for theme: FluentTheme) -> UIColor {
+        return colorProvidersMap.object(forKey: theme)?.brandBackground1Pressed(for: theme) ?? FallbackThemeColor.brandBackground1Pressed
     }
 
-    @objc public static func brandBackground1Selected(for window: UIWindow) -> UIColor {
-        return colorProvidersMap.object(forKey: window)?.brandBackground1Selected(for: window) ?? FallbackThemeColor.brandBackground1Selected
+    @objc public static func brandBackground1Selected(for theme: FluentTheme) -> UIColor {
+        return colorProvidersMap.object(forKey: theme)?.brandBackground1Selected(for: theme) ?? FallbackThemeColor.brandBackground1Selected
     }
 
-    @objc public static func brandBackground2(for window: UIWindow) -> UIColor {
-        return colorProvidersMap.object(forKey: window)?.brandBackground2(for: window) ?? FallbackThemeColor.brandBackground2
+    @objc public static func brandBackground2(for theme: FluentTheme) -> UIColor {
+        return colorProvidersMap.object(forKey: theme)?.brandBackground2(for: theme) ?? FallbackThemeColor.brandBackground2
     }
 
-    @objc public static func brandBackground2Pressed(for window: UIWindow) -> UIColor {
-        return colorProvidersMap.object(forKey: window)?.brandBackground2Pressed(for: window) ?? FallbackThemeColor.brandBackground2Pressed
+    @objc public static func brandBackground2Pressed(for theme: FluentTheme) -> UIColor {
+        return colorProvidersMap.object(forKey: theme)?.brandBackground2Pressed(for: theme) ?? FallbackThemeColor.brandBackground2Pressed
     }
 
-    @objc public static func brandBackground2Selected(for window: UIWindow) -> UIColor {
-        return colorProvidersMap.object(forKey: window)?.brandBackground2Selected(for: window) ?? FallbackThemeColor.brandBackground2Selected
+    @objc public static func brandBackground2Selected(for theme: FluentTheme) -> UIColor {
+        return colorProvidersMap.object(forKey: theme)?.brandBackground2Selected(for: theme) ?? FallbackThemeColor.brandBackground2Selected
     }
 
-    @objc public static func brandBackground3(for window: UIWindow) -> UIColor {
-        return colorProvidersMap.object(forKey: window)?.brandBackground3(for: window) ?? FallbackThemeColor.brandBackground3
+    @objc public static func brandBackground3(for theme: FluentTheme) -> UIColor {
+        return colorProvidersMap.object(forKey: theme)?.brandBackground3(for: theme) ?? FallbackThemeColor.brandBackground3
     }
 
-    @objc public static func brandBackgroundTint(for window: UIWindow) -> UIColor {
-        return colorProvidersMap.object(forKey: window)?.brandBackgroundTint(for: window) ?? FallbackThemeColor.brandBackgroundTint
+    @objc public static func brandBackgroundTint(for theme: FluentTheme) -> UIColor {
+        return colorProvidersMap.object(forKey: theme)?.brandBackgroundTint(for: theme) ?? FallbackThemeColor.brandBackgroundTint
     }
 
-    @objc public static func brandForegroundDisabled(for window: UIWindow) -> UIColor {
-        return colorProvidersMap.object(forKey: window)?.brandForegroundDisabled(for: window) ?? FallbackThemeColor.brandForegroundDisabled
+    @objc public static func brandForeground1(for theme: FluentTheme) -> UIColor {
+        return colorProvidersMap.object(forKey: theme)?.brandForeground1(for: theme) ?? FallbackThemeColor.brandForeground1
     }
 
-    @objc public static func brandForeground1(for window: UIWindow) -> UIColor {
-        return colorProvidersMap.object(forKey: window)?.brandForeground1(for: window) ?? FallbackThemeColor.brandForeground1
+    @objc public static func brandForeground1Pressed(for theme: FluentTheme) -> UIColor {
+        return colorProvidersMap.object(forKey: theme)?.brandForeground1Pressed(for: theme) ?? FallbackThemeColor.brandForeground1Pressed
     }
 
-    @objc public static func brandForeground1Pressed(for window: UIWindow) -> UIColor {
-        return colorProvidersMap.object(forKey: window)?.brandForeground1Pressed(for: window) ?? FallbackThemeColor.brandForeground1Pressed
+    @objc public static func brandForeground1Selected(for theme: FluentTheme) -> UIColor {
+        return colorProvidersMap.object(forKey: theme)?.brandForeground1Selected(for: theme) ?? FallbackThemeColor.brandForeground1Selected
     }
 
-    @objc public static func brandForeground1Selected(for window: UIWindow) -> UIColor {
-        return colorProvidersMap.object(forKey: window)?.brandForeground1Selected(for: window) ?? FallbackThemeColor.brandForeground1Selected
+    @objc public static func brandForegroundTint(for theme: FluentTheme) -> UIColor {
+        return colorProvidersMap.object(forKey: theme)?.brandForegroundTint(for: theme) ?? FallbackThemeColor.brandForegroundTint
     }
 
-    @objc public static func brandForegroundTint(for window: UIWindow) -> UIColor {
-        return colorProvidersMap.object(forKey: window)?.brandForegroundTint(for: window) ?? FallbackThemeColor.brandForegroundTint
+    @objc public static func brandForegroundDisabled1(for theme: FluentTheme) -> UIColor {
+        return colorProvidersMap.object(forKey: theme)?.brandForegroundDisabled1(for: theme) ?? FallbackThemeColor.brandForegroundDisabled1
     }
 
-    @objc public static func brandForegroundDisabled1(for window: UIWindow) -> UIColor {
-        return colorProvidersMap.object(forKey: window)?.brandForegroundDisabled1(for: window) ?? FallbackThemeColor.brandForegroundDisabled1
+    @objc public static func brandForegroundDisabled2(for theme: FluentTheme) -> UIColor {
+        return colorProvidersMap.object(forKey: theme)?.brandForegroundDisabled2(for: theme) ?? FallbackThemeColor.brandForegroundDisabled2
     }
 
-    @objc public static func brandForegroundDisabled2(for window: UIWindow) -> UIColor {
-        return colorProvidersMap.object(forKey: window)?.brandForegroundDisabled2(for: window) ?? FallbackThemeColor.brandForegroundDisabled2
+    @objc public static func brandStroke1(for theme: FluentTheme) -> UIColor {
+        return colorProvidersMap.object(forKey: theme)?.brandStroke1(for: theme) ?? FallbackThemeColor.brandStroke1
     }
 
-    @objc public static func brandStroke1(for window: UIWindow) -> UIColor {
-        return colorProvidersMap.object(forKey: window)?.brandStroke1(for: window) ?? FallbackThemeColor.brandStroke1
+    @objc public static func brandStroke1Pressed(for theme: FluentTheme) -> UIColor {
+        return colorProvidersMap.object(forKey: theme)?.brandStroke1Pressed(for: theme) ?? FallbackThemeColor.brandStroke1Pressed
     }
 
-    @objc public static func brandStroke1Pressed(for window: UIWindow) -> UIColor {
-        return colorProvidersMap.object(forKey: window)?.brandStroke1Pressed(for: window) ?? FallbackThemeColor.brandStroke1Pressed
+    @objc public static func brandStroke1Selected(for theme: FluentTheme) -> UIColor {
+        return colorProvidersMap.object(forKey: theme)?.brandStroke1Selected(for: theme) ?? FallbackThemeColor.brandStroke1Selected
     }
 
-    @objc public static func brandStroke1Selected(for window: UIWindow) -> UIColor {
-        return colorProvidersMap.object(forKey: window)?.brandStroke1Selected(for: window) ?? FallbackThemeColor.brandStroke1Selected
-    }
-
-    private static var colorProvidersMap = NSMapTable<UIWindow, ColorProviding>(keyOptions: .weakMemory, valueOptions: .weakMemory)
+    private static var colorProvidersMap = NSMapTable<FluentTheme, ColorProviding2>(keyOptions: .weakMemory, valueOptions: .weakMemory)
 
     /// A namespace for holding fallback theme colors (empty enum is an uninhabited type)
     private enum FallbackThemeColor {
-        static var brandBackground1: UIColor = AliasTokens.colors[ColorsTokens.brandBackground1]
+        static var brandBackground1: UIColor = UIColor(dynamicColor: FluentTheme.shared.aliasTokens.colors[.brandBackground1])
 
-        static var brandBackground1Pressed: UIColor = AliasTokens.colors[ColorsTokens.brandBackground1Pressed]
+        static var brandBackground1Pressed: UIColor = UIColor(dynamicColor: FluentTheme.shared.aliasTokens.colors[.brandBackground1Pressed])
 
-        static var brandBackground1Selected: UIColor = AliasTokens.colors[ColorsTokens.brandBackground1Selected]
+        static var brandBackground1Selected: UIColor = UIColor(dynamicColor: FluentTheme.shared.aliasTokens.colors[.brandBackground1Selected])
 
-        static var brandBackground2: UIColor = AliasTokens.colors[ColorsTokens.brandBackground2]
+        static var brandBackground2: UIColor = UIColor(dynamicColor: FluentTheme.shared.aliasTokens.colors[.brandBackground2])
 
-        static var brandBackground2Pressed: UIColor = AliasTokens.colors[ColorsTokens.brandBackground2Pressed]
+        static var brandBackground2Pressed: UIColor = UIColor(dynamicColor: FluentTheme.shared.aliasTokens.colors[.brandBackground2Pressed])
 
-        static var brandBackground2Selected: UIColor = AliasTokens.colors[ColorsTokens.brandBackground2Selected]
+        static var brandBackground2Selected: UIColor = UIColor(dynamicColor: FluentTheme.shared.aliasTokens.colors[.brandBackground2Selected])
 
-        static var brandBackground3: UIColor = AliasTokens.colors[ColorsTokens.brandBackground3]
+        static var brandBackground3: UIColor = UIColor(dynamicColor: FluentTheme.shared.aliasTokens.colors[.brandBackground3])
 
-        static var brandBackgroundTint: UIColor = AliasTokens.colors[ColorsTokens.brandBackgroundTint]
+        static var brandBackgroundTint: UIColor = UIColor(dynamicColor: FluentTheme.shared.aliasTokens.colors[.brandBackgroundTint])
 
-        static var brandForeground1: UIColor = AliasTokens.colors[ColorsTokens.brandForeground1]
+        static var brandForeground1: UIColor = UIColor(dynamicColor: FluentTheme.shared.aliasTokens.colors[.brandForeground1])
 
-        static var brandForeground1Pressed: UIColor = AliasTokens.colors[ColorsTokens.brandForeground1Selected]
+        static var brandForeground1Pressed: UIColor = UIColor(dynamicColor: FluentTheme.shared.aliasTokens.colors[.brandForeground1Selected])
 
-        static var brandForeground1Selected: UIColor = AliasTokens.colors[ColorsTokens.brandStroke1Selected]
+        static var brandForeground1Selected: UIColor = UIColor(dynamicColor: FluentTheme.shared.aliasTokens.colors[.brandStroke1Selected])
 
-        static var brandForegroundTint: UIColor = AliasTokens.colors[ColorsTokens.brandForegroundTint]
+        static var brandForegroundTint: UIColor = UIColor(dynamicColor: FluentTheme.shared.aliasTokens.colors[.brandForegroundTint])
 
-        static var brandForegroundDisabled1: UIColor = AliasTokens.colors[ColorsTokens.brandForegroundDisabled1]
+        static var brandForegroundDisabled1: UIColor = UIColor(dynamicColor: FluentTheme.shared.aliasTokens.colors[.brandForegroundDisabled1])
 
-        static var brandForegroundDisabled2: UIColor = AliasTokens.colors[ColorsTokens.brandForegroundDisabled2]
+        static var brandForegroundDisabled2: UIColor = UIColor(dynamicColor: FluentTheme.shared.aliasTokens.colors[.brandForegroundDisabled2])
 
-        static var brandStroke1: UIColor = AliasTokens.colors[ColorsTokens.brandStroke1]
+        static var brandStroke1: UIColor = UIColor(dynamicColor: FluentTheme.shared.aliasTokens.colors[.brandStroke1])
 
-        static var brandStroke1Pressed: UIColor = AliasTokens.colors[ColorsTokens.brandStroke1Pressed]
+        static var brandStroke1Pressed: UIColor = UIColor(dynamicColor: FluentTheme.shared.aliasTokens.colors[.brandStroke1Pressed])
 
-        static var brandStroke1Selected: UIColor = AliasTokens.colors[ColorsTokens.brandStroke1Selected]
+        static var brandStroke1Selected: UIColor = UIColor(dynamicColor: FluentTheme.shared.aliasTokens.colors[.brandStroke1Selected])
     }
 
     @available(*, unavailable)

@@ -8,7 +8,7 @@ import UIKit
 
 class DemoListViewController: DemoTableViewController {
 
-    private var provider: ColorProviding? = DemoColorTheme.default.provider
+    private var provider: ColorProviding2? = DemoColorTheme.default.provider
     public var theme: DemoColorTheme = DemoColorTheme.default {
         didSet {
             provider = theme.provider

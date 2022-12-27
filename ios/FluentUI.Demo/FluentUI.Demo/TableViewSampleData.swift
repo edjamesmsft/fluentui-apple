@@ -24,8 +24,9 @@ class TableViewSampleData {
         let hasCustomAccessoryView: Bool
         let hasCustomLeadingView: Bool
         let hasHandler: Bool
+        let fluentTheme: FluentTheme
 
-        init(title: String, items: [Item] = [], numberOfLines: Int = 1, hasFullLengthLabelAccessoryView: Bool = false, hasAccessory: Bool = false, accessoryButtonStyle: TableViewHeaderFooterView.AccessoryButtonStyle = .regular, allowsMultipleSelection: Bool = true, headerStyle: TableViewHeaderFooterView.Style = .header, hasFooter: Bool = false, footerText: String = "", footerLinkText: String = "", hasCustomLinkHandler: Bool = false, hasCustomAccessoryView: Bool = false, hasCustomLeadingView: Bool = false, hasHandler: Bool = false) {
+        init(title: String, items: [Item] = [], numberOfLines: Int = 1, hasFullLengthLabelAccessoryView: Bool = false, hasAccessory: Bool = false, accessoryButtonStyle: TableViewHeaderFooterView.AccessoryButtonStyle = .regular, allowsMultipleSelection: Bool = true, headerStyle: TableViewHeaderFooterView.Style = .header, hasFooter: Bool = false, footerText: String = "", footerLinkText: String = "", hasCustomLinkHandler: Bool = false, hasCustomAccessoryView: Bool = false, hasCustomLeadingView: Bool = false, hasHandler: Bool = false, fluentTheme: FluentTheme = FluentTheme()) {
             self.title = title
             self.items = items
             self.numberOfLines = numberOfLines
@@ -41,6 +42,7 @@ class TableViewSampleData {
             self.hasCustomAccessoryView = hasCustomAccessoryView
             self.hasCustomLeadingView = hasCustomLeadingView
             self.hasHandler = hasHandler
+            self.fluentTheme = fluentTheme
         }
     }
 

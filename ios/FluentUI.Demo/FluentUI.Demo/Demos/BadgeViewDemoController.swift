@@ -55,13 +55,13 @@ class BadgeViewDemoController: DemoController {
             let badge = createBadge(text: "Kat Larsson", style: style, size: size, isEnabled: isEnabled)
             if overrideColor {
                 if isEnabled {
-                    badge.backgroundColor = Colors.Palette.blueMagenta20.color
-                    badge.selectedBackgroundColor = Colors.Palette.cyanBlue20.color
-                    badge.labelTextColor = Colors.Palette.gray50.color
-                    badge.selectedLabelTextColor = Colors.Palette.gray100.color
+                    badge.backgroundColor = UIColor(colorValue: GlobalTokens.sharedColors(.orchid, .primary)) // Colors.Palette.blueMagenta20.color
+                    badge.selectedBackgroundColor = UIColor(colorValue: GlobalTokens.sharedColors(.cyan, .primary))// Colors.Palette.cyanBlue20.color
+                    badge.labelTextColor = UIColor(colorValue: GlobalTokens.neutralColors(.grey94))// Colors.Palette.gray50.color
+                    badge.selectedLabelTextColor = UIColor(colorValue: GlobalTokens.neutralColors(.grey88)) // Colors.Palette.gray100.color
                 } else {
-                    badge.disabledBackgroundColor = Colors.Palette.gray100.color
-                    badge.disabledLabelTextColor = Colors.Palette.gray600.color
+                    badge.disabledBackgroundColor = UIColor(colorValue: GlobalTokens.neutralColors(.grey88)) // Colors.Palette.gray100.color
+                    badge.disabledLabelTextColor = UIColor(colorValue: GlobalTokens.neutralColors(.grey26)) // Colors.Palette.gray600.color
                 }
             }
             addRow(text: size.description, items: [badge])
@@ -93,7 +93,7 @@ class BadgeViewDemoController: DemoController {
                 customView: customView,
                 customViewVerticalPadding: 3
             )
-            badge.disabledBackgroundColor = Colors.Palette.blueMagenta20.color
+            badge.disabledBackgroundColor = UIColor(colorValue: GlobalTokens.sharedColors(.orchid, .primary)) // Colors.Palette.blueMagenta20.color
             badge.disabledLabelTextColor = .white
 
             addRow(text: size.description, items: [badge])

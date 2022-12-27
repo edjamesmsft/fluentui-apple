@@ -28,7 +28,8 @@
     [stack setTranslatesAutoresizingMaskIntoConstraints:NO];
     UIView *view = [self view];
     [view addSubview:stack];
-    [view setBackgroundColor:[MSFColors surfacePrimary]];
+    UIColor *backgroundColor = [[UIColor alloc] initWithDynamicColor: [[[view fluentTheme] aliasTokens] colorsForToken:MSFColorsAliasTokensBackground1]];
+    [view setBackgroundColor: backgroundColor];
     UILayoutGuide *safeArea = [view safeAreaLayoutGuide];
     [NSLayoutConstraint activateConstraints:@[
         [[stack topAnchor] constraintEqualToAnchor:[safeArea topAnchor] constant:10],

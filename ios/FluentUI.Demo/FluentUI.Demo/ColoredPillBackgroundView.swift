@@ -45,16 +45,16 @@ class ColoredPillBackgroundView: UIView {
                 lightColor = UIColor(dynamicColor: fluentTheme.aliasTokens.backgroundColors[.neutral1])
                 darkColor = UIColor(dynamicColor: fluentTheme.aliasTokens.backgroundColors[.neutral4])
             } else {
-                lightColor = Colors.navigationBarBackground
-                darkColor = Colors.navigationBarBackground
+                lightColor = UIColor(dynamicColor: fluentTheme.aliasTokens.colors[.background3])
+                darkColor = UIColor(dynamicColor: fluentTheme.aliasTokens.colors[.background3])
             }
         case .brand:
             if let fluentTheme = window?.fluentTheme {
                 lightColor = UIColor(dynamicColor: fluentTheme.aliasTokens.backgroundColors[.brandRest])
                 darkColor = UIColor(dynamicColor: fluentTheme.aliasTokens.backgroundColors[.neutral4])
             } else {
-                lightColor = Colors.communicationBlue
-                darkColor = Colors.navigationBarBackground
+                lightColor = UIColor(colorValue: GlobalTokens.brandColors(.comm80))
+                darkColor = UIColor(dynamicColor: fluentTheme.aliasTokens.colors[.background3])
             }
         }
 

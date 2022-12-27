@@ -112,7 +112,7 @@ class NavigationControllerDemoController: DemoController {
         stackView.alignment = .center
         let button = UIButton(type: .system)
         button.setImage(UIImage(named: "ic_fluent_filter_28"), for: .normal)
-        button.tintColor = UIColor(light: Colors.textOnAccent, dark: Colors.textPrimary)
+        button.tintColor = UIColor(dynamicColor: view.fluentTheme.aliasTokens.colors[.foreground1])
         stackView.addArrangedSubview(button)
         presentController(withLargeTitle: true, accessoryView: stackView, contractNavigationBarOnScroll: false)
     }
@@ -135,7 +135,7 @@ class NavigationControllerDemoController: DemoController {
         content.navigationItem.contentScrollView = contractNavigationBarOnScroll ? content.tableView : nil
         content.showsTopAccessoryView = showsTopAccessory
 
-        content.navigationItem.customNavigationBarColor = CustomGradient.getCustomBackgroundColor(width: view.frame.width)
+        content.navigationItem.customNavigationBarColor = CustomGradient.getCustomBackgroundColor(width: view.frame.width, view.fluentTheme)
 
         if updateStylePeriodically {
             changeStyleContinuously(in: content.navigationItem)
@@ -343,7 +343,7 @@ class RootViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
         navigationBarFrameObservation = navigationController?.navigationBar.observe(\.frame, options: [.old, .new]) { [unowned self] navigationBar, change in
             if change.newValue?.width != change.oldValue?.width && self.navigationItem.navigationBarStyle == .custom {
-                self.navigationItem.customNavigationBarColor = CustomGradient.getCustomBackgroundColor(width: navigationBar.frame.width)
+                self.navigationItem.customNavigationBarColor = CustomGradient.getCustomBackgroundColor(width: navigationBar.frame.width, view.fluentTheme)
             }
         }
     }
@@ -664,9 +664,10 @@ class ModalViewController: UITableViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if let window = view.window {
-            navigationItem.rightBarButtonItem?.tintColor = UIColor(light: Colors.primary(for: window), dark: Colors.textDominant)
-        }
+        var aliasTokens = view.fluentTheme.aliasTokens
+            navigationItem.rightBarButtonItem?.tintColor = UIColor(
+                light: UIColor(dynamicColor: aliasTokens.colors[.brandForeground1]),
+                dark: UIColor(dynamicColor: aliasTokens.colors[.foreground1]))
     }
 
     override func viewDidLoad() {
@@ -732,7 +733,7 @@ class ModalViewController: UITableViewController {
 // MARK: - Gradient Color
 
 class CustomGradient {
-    class func getCustomBackgroundColor(width: CGFloat) -> UIColor {
+    class func getCustomBackgroundColor(width: CGFloat, fluentTheme: FluentTheme) -> UIColor {
         let startColor: UIColor = #colorLiteral(red: 0.8156862745, green: 0.2156862745, blue: 0.3529411765, alpha: 1)
         let midColor: UIColor = #colorLiteral(red: 0.8470588235, green: 0.231372549, blue: 0.003921568627, alpha: 1)
         let endColor: UIColor = #colorLiteral(red: 0.8470588235, green: 0.231372549, blue: 0.003921568627, alpha: 1)
@@ -750,6 +751,6 @@ class CustomGradient {
         }
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        return UIColor(light: image != nil ? UIColor(patternImage: image!) : endColor, dark: Colors.navigationBarBackground)
+        return UIColor(light: image != nil ? UIColor(patternImage: image!) : endColor, dark: fluentTheme.aliasTokens.colors[.background3])
     }
 }

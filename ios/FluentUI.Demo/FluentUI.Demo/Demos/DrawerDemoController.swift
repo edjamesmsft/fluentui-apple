@@ -137,11 +137,11 @@ class DrawerDemoController: DemoController {
         controller.view.addSubview(content)
         content.frame = controller.view.bounds
         content.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        content.backgroundColor = Colors.navigationBarBackground
+        content.backgroundColor = UIColor(dynamicColor: view.fluentTheme.aliasTokens.colors[.background3])
 
         let contentController = UINavigationController(rootViewController: controller)
-        contentController.navigationBar.barTintColor = Colors.navigationBarBackground
-        contentController.toolbar.barTintColor = Colors.navigationBarBackground
+        contentController.navigationBar.barTintColor = UIColor(dynamicColor: view.fluentTheme.aliasTokens.colors[.background3])
+        contentController.toolbar.barTintColor = UIColor(dynamicColor: view.fluentTheme.aliasTokens.colors[.background3])
         contentController.isToolbarHidden = false
         contentController.preferredContentSize = CGSize(width: 400, height: 400)
         contentControllerOriginalPreferredContentHeight = contentController.preferredContentSize.height
@@ -283,7 +283,7 @@ class DrawerDemoController: DemoController {
                                    contentController: contentController,
                                    resizingBehavior: .dismissOrExpand)
 
-        drawer.resizingHandleViewBackgroundColor = Colors.navigationBarBackground
+        drawer.resizingHandleViewBackgroundColor = UIColor(dynamicColor: view.fluentTheme.aliasTokens.colors[.background3])
         drawer.contentScrollView = personaListView
     }
 

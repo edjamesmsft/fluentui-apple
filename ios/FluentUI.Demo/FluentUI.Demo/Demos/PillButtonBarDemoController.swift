@@ -77,17 +77,18 @@ class PillButtonBarDemoController: DemoController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if let window = view.window {
-            onBrandBar?.backgroundColor = UIColor(light: Colors.primary(for: window), dark: Colors.navigationBarBackground)
-            customBar?.backgroundColor = UIColor(light: Colors.primary(for: window), dark: Colors.navigationBarBackground)
+            onBrandBar?.backgroundColor = UIColor(light: Colors.primary(for: window), dark: UIColor(view.fluentTheme.aliasTokens.colors[.background3])
+            customBar?.backgroundColor = UIColor(light: Colors.primary(for: window), dark: view.fluentTheme.aliasTokens.colors[.background3])
         }
     }
 
     func createBar(items: [PillButtonBarItem], style: PillButtonStyle = .primary, centerAligned: Bool = false, disabledItems: Bool = false, useCustomPillsColors: Bool = false) -> UIView {
-        let pillButtonBackgroundColor = useCustomPillsColors ? Colors.textOnAccent : nil
-        let pillSelectedButtonBackgroundColor = useCustomPillsColors ? Colors.textPrimary : nil
-        let pillButtonTextColor = useCustomPillsColors ? Colors.textPrimary : nil
-        let pillSelectedButtontextColor = useCustomPillsColors ? Colors.textOnAccent : nil
-        let pillButtonUnreadDotColor = useCustomPillsColors ? Colors.textPrimary : nil
+        let theme = view.fluentTheme
+        let pillButtonBackgroundColor = useCustomPillsColors ? UIColor(dynamicColor: theme.aliasTokens.colors[.foregroundOnColor]) : nil
+        let pillSelectedButtonBackgroundColor = useCustomPillsColors ? UIColor(dynamicColor: theme.aliasTokens.colors[.foreground1]) : nil
+        let pillButtonTextColor = useCustomPillsColors ? UIColor(dynamicColor: theme.aliasTokens.colors[.foreground1]) : nil
+        let pillSelectedButtontextColor = useCustomPillsColors ? UIColor(dynamicColor: theme.aliasTokens.colors[.foregroundOnColor]) : nil
+        let pillButtonUnreadDotColor = useCustomPillsColors ? UIColor(dynamicColor: theme.aliasTokens.colors[.foreground1]) : nil
 
         let bar = PillButtonBar(pillButtonStyle: style, pillButtonBackgroundColor: pillButtonBackgroundColor, selectedPillButtonBackgroundColor: pillSelectedButtonBackgroundColor, pillButtonTextColor: pillButtonTextColor, selectedPillButtonTextColor: pillSelectedButtontextColor, pillButtonUnreadDotColor: pillButtonUnreadDotColor)
         bar.items = items

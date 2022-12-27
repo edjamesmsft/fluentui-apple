@@ -648,18 +648,18 @@ public final class Colors: NSObject {
 
     // MARK: Physical - grays
 
-    @objc public static let gray950: UIColor = Palette.gray950.color // grey8
-    @objc public static let gray900: UIColor = Palette.gray900.color // grey12
-    @objc public static let gray800: UIColor = Palette.gray800.color // grey16
-    @objc public static let gray700: UIColor = Palette.gray700.color // grey18
-    @objc public static let gray600: UIColor = Palette.gray600.color // grey26
-    @objc public static let gray500: UIColor = Palette.gray500.color // grey44
-    @objc public static let gray400: UIColor = Palette.gray400.color // grey58
-    @objc public static let gray300: UIColor = Palette.gray300.color // grey68
-    @objc public static let gray200: UIColor = Palette.gray200.color // grey78
-    @objc public static let gray100: UIColor = Palette.gray100.color // grey88
-    @objc public static let gray50: UIColor = Palette.gray50.color // grey94
-    @objc public static let gray25: UIColor = Palette.gray25.color // grey98
+    @objc public static let gray950: UIColor = Palette.gray950.color
+    @objc public static let gray900: UIColor = Palette.gray900.color
+    @objc public static let gray800: UIColor = Palette.gray800.color
+    @objc public static let gray700: UIColor = Palette.gray700.color
+    @objc public static let gray600: UIColor = Palette.gray600.color
+    @objc public static let gray500: UIColor = Palette.gray500.color
+    @objc public static let gray400: UIColor = Palette.gray400.color
+    @objc public static let gray300: UIColor = Palette.gray300.color
+    @objc public static let gray200: UIColor = Palette.gray200.color
+    @objc public static let gray100: UIColor = Palette.gray100.color
+    @objc public static let gray50: UIColor = Palette.gray50.color
+    @objc public static let gray25: UIColor = Palette.gray25.color
 
     // MARK: Physical - Non-grays
 
@@ -679,37 +679,37 @@ public final class Colors: NSObject {
     /// when determining high contrast color, add 200 in light mode and substract 200 in dark mode from the default color.
 
     /// text color used for main level in the screen. eg. title in dialog, title in navigationbar with `surfacePrimary`, etc
-    @objc public static let textDominant = UIColor(light: gray900, lightHighContrast: .black, dark: .white) // foreground1
+    @objc public static let textDominant = UIColor(light: gray900, lightHighContrast: .black, dark: .white)
     /// text color used for titles
-    @objc public static var textPrimary = UIColor(light: gray900, lightHighContrast: .black, dark: gray100, darkHighContrast: .white) // foreground1
+    @objc public static var textPrimary = UIColor(light: gray900, lightHighContrast: .black, dark: gray100, darkHighContrast: .white)
     /// text color used for subtitles
-    @objc public static let textSecondary = UIColor(light: gray500, lightHighContrast: gray700, dark: gray400, darkHighContrast: gray200) // foreground3
+    @objc public static let textSecondary = UIColor(light: gray500, lightHighContrast: gray700, dark: gray400, darkHighContrast: gray200)
     /// text color used in disabled state
-    @objc public static let textDisabled = UIColor(light: gray300, lightHighContrast: gray500, dark: gray600, darkHighContrast: gray400) // foregroundDisabled1, 2 for dark mode?
+    @objc public static let textDisabled = UIColor(light: gray300, lightHighContrast: gray500, dark: gray600, darkHighContrast: gray400)
     /// text appears on top of the surface that uses `Colors.primary` as background color
-    @objc public static let textOnAccent = UIColor(light: .white, dark: .black) // foregroundOnColor
+    @objc public static let textOnAccent = UIColor(light: .white, dark: .black)
 
     /// icon used as call-to-actions without a label attached. They need to reach a minimum contrast ratio 4.5:1 to its background
     @objc public static let iconPrimary = UIColor(light: gray500, lightHighContrast: gray700, dark: .white) // foreground3 is closeish?
     /// icon that are attached to a label and are only used for decorative purposes
-    @objc public static let iconSecondary = UIColor(light: gray400, lightHighContrast: gray600, dark: gray500, darkHighContrast: gray300, darkElevated: gray400) // no good mapping... MAYBE foreground3, but that only works in light mode, not dark mode... disabled1 might be okayish?
+    @objc public static let iconSecondary = UIColor(light: gray400, lightHighContrast: gray600, dark: gray500, darkHighContrast: gray300, darkElevated: gray400)
     /// icon color used in disabled state
-    @objc public static let iconDisabled = UIColor(light: gray300, lightHighContrast: gray500, dark: gray600, darkHighContrast: gray400) // foregroundDisabled1
+    @objc public static let iconDisabled = UIColor(light: gray300, lightHighContrast: gray500, dark: gray600, darkHighContrast: gray400)
     /// icon appears on top of surfaces that uses `Colors.primary` as background color
-    @objc public static let iconOnAccent = UIColor(light: .white, dark: .black) // foregroundOnColor
+    @objc public static let iconOnAccent = UIColor(light: .white, dark: .black)
 
     /// In Darkmode, our system use two sets of background colors -- called base and elevated -- to enhance the perception of depath when one dark interface is layered above another.
     /// The dark base colors are darker, making background interface appear to recede, and the elevate colors are lighter, making foreground interfaces appear to advance
 
-    @objc public static var surfacePrimary = UIColor(light: .white, dark: .black, darkElevated: gray950) // background1
-    @objc public static let surfaceSecondary = UIColor(light: gray25, dark: gray950, darkElevated: gray900) // background4
-    @objc public static let surfaceTertiary = UIColor(light: gray50, dark: gray900, darkElevated: gray800) // background5
+    @objc public static var surfacePrimary = UIColor(light: .white, dark: .black, darkElevated: gray950)
+    @objc public static let surfaceSecondary = UIColor(light: gray25, dark: gray950, darkElevated: gray900)
+    @objc public static let surfaceTertiary = UIColor(light: gray50, dark: gray900, darkElevated: gray800)
     /// also used for disabled background color
     @objc public static let surfaceQuaternary = UIColor(light: gray100, dark: gray600) // backgroundDisabled
 
-    @objc public static let dividerOnPrimary = UIColor(light: gray100, dark: gray800, darkElevated: gray700) // stroke2
-    @objc public static let dividerOnSecondary = UIColor(light: gray200, dark: gray700, darkElevated: gray600) // stroke1
-    @objc public static let dividerOnTertiary = UIColor(light: gray200, dark: gray700, darkElevated: gray600) // stroke1?? these two are the same...
+    @objc public static let dividerOnPrimary = UIColor(light: gray100, dark: gray800, darkElevated: gray700)
+    @objc public static let dividerOnSecondary = UIColor(light: gray200, dark: gray700, darkElevated: gray600)
+    @objc public static let dividerOnTertiary = UIColor(light: gray200, dark: gray700, darkElevated: gray600)
 
 	@objc(colorFromPalette:) public static func color(from palette: Palette) -> UIColor {
         return palette.color

@@ -22,7 +22,7 @@ enum DemoColorTheme: CaseIterable {
         }
     }
 
-    var provider: ColorProviding? {
+    var provider: ColorProviding2? {
         switch self {
         case .default:
             return DemoColorDefaultTheme()
@@ -34,7 +34,7 @@ enum DemoColorTheme: CaseIterable {
     }
 }
 
-class DemoColorDefaultTheme: NSObject, ColorProviding {
+class DemoColorDefaultTheme: NSObject, ColorProviding2 {
     func primaryColor(for window: UIWindow) -> UIColor? {
         return Colors.communicationBlue
     }
@@ -68,7 +68,7 @@ class DemoColorDefaultTheme: NSObject, ColorProviding {
     }
 }
 
-class DemoColorGreenTheme: NSObject, ColorProviding {
+class DemoColorGreenTheme: NSObject, ColorProviding2 {
     func primaryColor(for window: UIWindow) -> UIColor? {
         return UIColor(named: "Colors/DemoPrimaryColor")
     }

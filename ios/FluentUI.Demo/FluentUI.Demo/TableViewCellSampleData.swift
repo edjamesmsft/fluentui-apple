@@ -88,7 +88,7 @@ class TableViewCellSampleData: TableViewSampleData {
                      image: "excelIcon",
                      text1TrailingAccessoryView: { createTextAccessoryView(text: "10:21 AM") },
                      text2TrailingAccessoryView: { createIconsAccessoryView(images: ["at-12x12"], rightAligned: true) },
-                     text3TrailingAccessoryView: { createTextAccessoryView(text: "2", withBorder: true) })
+                     text3TrailingAccessoryView: { createTextAccessoryView(text: "2", withBorder: true, fluentTheme: fluentTheme) })
             ],
             numberOfLines: 0,
             allowsMultipleSelection: false
@@ -164,14 +164,16 @@ class TableViewCellSampleData: TableViewSampleData {
         return labelAccessoryView(accessories: [progressView], spacing: 0, alignment: .fill)
     }
 
-    static func createTextAccessoryView(text: String, withBorder: Bool = false) -> UIView {
+    static func createTextAccessoryView(text: String, withBorder: Bool = false, fluentTheme: FluentTheme) -> UIView {
         let stackView = UIStackView()
         stackView.alignment = .center
         stackView.distribution = .fill
         stackView.axis = .vertical
 
+        var textColor = UIColor(dynamicColor: fluentTheme.aliasTokens.colors[.foreground3])
+
         let label = Label(style: .footnote)
-        label.textColor = Colors.textSecondary
+        label.textColor = textColor
         label.text = text
         stackView.addArrangedSubview(label)
 
@@ -188,7 +190,7 @@ class TableViewCellSampleData: TableViewSampleData {
 
         if withBorder {
             container.layer.borderWidth = 0.5
-            container.layer.borderColor = Colors.textSecondary.cgColor
+            container.layer.borderColor = textColor.cgColor
             container.layer.cornerRadius = 3
         }
 
