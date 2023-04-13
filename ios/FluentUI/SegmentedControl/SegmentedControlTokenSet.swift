@@ -64,7 +64,7 @@ public class SegmentedControlTokenSet: ControlTokenSet<SegmentedControlTokenSet.
             case .restTabColor:
                 return .uiColor {
                     switch style() {
-                    case .primaryPill:
+                    case .primaryPill, .neutralPill:
                         return UIColor(light: theme.color(.background5).light,
                                        dark: theme.color(.background5).dark)
                     case .onBrandPill:
@@ -76,7 +76,7 @@ public class SegmentedControlTokenSet: ControlTokenSet<SegmentedControlTokenSet.
             case .selectedTabColor:
                 return .uiColor {
                     switch style() {
-                    case .primaryPill:
+                    case .primaryPill, .neutralPill:
                         return theme.color(.brandBackground1)
                     case .onBrandPill:
                         return UIColor(light: theme.color(.background1).light,
@@ -87,7 +87,7 @@ public class SegmentedControlTokenSet: ControlTokenSet<SegmentedControlTokenSet.
             case .disabledTabColor:
                 return .uiColor {
                     switch style() {
-                    case .primaryPill:
+                    case .primaryPill, .neutralPill:
                         return UIColor(light: theme.color(.background5).light,
                                        dark: theme.color(.background5).dark)
                     case .onBrandPill:
@@ -99,7 +99,7 @@ public class SegmentedControlTokenSet: ControlTokenSet<SegmentedControlTokenSet.
             case .disabledSelectedTabColor:
                 return .uiColor {
                     switch style() {
-                    case .primaryPill:
+                    case .primaryPill, .neutralPill:
                         return theme.color(.brandBackground1)
                     case .onBrandPill:
                         return UIColor(light: theme.color(.background1).light,
@@ -110,7 +110,7 @@ public class SegmentedControlTokenSet: ControlTokenSet<SegmentedControlTokenSet.
             case .restLabelColor:
                 return .uiColor {
                     switch style() {
-                    case .primaryPill:
+                    case .primaryPill, .neutralPill:
                         return theme.color(.foreground2)
                     case .onBrandPill:
                         return UIColor(light: theme.color(.foregroundOnColor).light,
@@ -121,7 +121,7 @@ public class SegmentedControlTokenSet: ControlTokenSet<SegmentedControlTokenSet.
             case .selectedLabelColor:
                 return .uiColor {
                     switch style() {
-                    case .primaryPill:
+                    case .primaryPill, .neutralPill:
                         return theme.color(.foregroundOnColor)
                     case .onBrandPill:
                         return UIColor(light: theme.color(.brandForeground1).light,
@@ -132,7 +132,7 @@ public class SegmentedControlTokenSet: ControlTokenSet<SegmentedControlTokenSet.
             case .disabledLabelColor, .disabledUnreadDotColor:
                 return .uiColor {
                     switch style() {
-                    case .primaryPill:
+                    case .primaryPill, .neutralPill:
                         return theme.color(.foregroundDisabled1)
                     case .onBrandPill:
                         return UIColor(light: theme.color(.brandForegroundDisabled1).light,
@@ -143,7 +143,7 @@ public class SegmentedControlTokenSet: ControlTokenSet<SegmentedControlTokenSet.
             case .disabledSelectedLabelColor:
                 return .uiColor {
                     switch style() {
-                    case .primaryPill:
+                    case .primaryPill, .neutralPill:
                         return theme.color(.brandForegroundDisabled1)
                     case .onBrandPill:
                         return UIColor(light: theme.color(.brandForegroundDisabled2).light,
@@ -154,7 +154,7 @@ public class SegmentedControlTokenSet: ControlTokenSet<SegmentedControlTokenSet.
             case .enabledUnreadDotColor:
                 return .uiColor {
                     switch style() {
-                    case .primaryPill:
+                    case .primaryPill, .neutralPill:
                         return UIColor(light: theme.color(.brandForeground1).light,
                                        dark: theme.color(.foreground1).dark)
                     case .onBrandPill:
@@ -191,8 +191,11 @@ public class SegmentedControlTokenSet: ControlTokenSet<SegmentedControlTokenSet.
 @objc(MSFSegmentedControlStyle)
 public enum SegmentedControlStyle: Int {
     /// Segments are shows as labels inside a pill for use with a neutral or white background. Selection is indicated by a thumb under the selected label.
+    @available(*, deprecated, message: "primaryPill is now deprecated. Please use neutralPill.")
     case primaryPill
     /// Segments are shows as labels inside a pill for use on a branded background that features a prominent brand color in light mode and a muted grey in dark mode.
     /// Selection is indicated by a thumb under the selected label.
     case onBrandPill
+    /// Segments are shown as labels inside a pill for use with a neutral or white background.
+    case neutralPill
 }

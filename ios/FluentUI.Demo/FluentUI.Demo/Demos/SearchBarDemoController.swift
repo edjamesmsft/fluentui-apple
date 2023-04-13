@@ -35,7 +35,7 @@ class SearchBarDemoController: DemoController, SearchBarDelegate {
         let segmentedControl = SegmentedControl(items: [SegmentItem(title: "OnCanvas"),
                                                         SegmentItem(title: "OnNavigationBar"),
                                                         SegmentItem(title: "OnBrand")],
-                                                style: .primaryPill)
+                                                style: .neutralPill)
 
         return segmentedControl
     }()

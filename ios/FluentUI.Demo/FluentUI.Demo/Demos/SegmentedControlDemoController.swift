@@ -38,13 +38,13 @@ class SegmentedControlDemoController: DemoController {
         addTitle(text: "Primary Pill")
         addDescription(text: "fixed width, equal buttons", textAlignment: .center)
         addPillControl(items: Array(segmentItems.prefix(3)),
-                       style: .primaryPill)
+                       style: .neutralPill)
         container.addArrangedSubview(UIView())
 
         addTitle(text: "Primary Pill")
         addDescription(text: "not fixed width, unequal buttons", textAlignment: .center)
         addPillControl(items: Array(segmentItems.prefix(10)),
-                       style: .primaryPill,
+                       style: .neutralPill,
                        equalSegments: false,
                        isFixedWidth: false)
         container.addArrangedSubview(UIView())
@@ -52,7 +52,7 @@ class SegmentedControlDemoController: DemoController {
         addTitle(text: "Primary Pill")
         addDescription(text: "not fixed width, unequal buttons", textAlignment: .center)
         addPillControl(items: Array(segmentItems.prefix(2)),
-                       style: .primaryPill,
+                       style: .neutralPill,
                        equalSegments: false,
                        isFixedWidth: false)
         container.addArrangedSubview(UIView())
@@ -60,7 +60,7 @@ class SegmentedControlDemoController: DemoController {
         addTitle(text: "Disabled Primary Pill")
         addDescription(text: "fixed width, equal buttons", textAlignment: .center)
         addPillControl(items: Array(segmentItems.prefix(2)),
-                       style: .primaryPill,
+                       style: .neutralPill,
                        enabled: false)
         container.addArrangedSubview(UIView())
 
@@ -105,7 +105,7 @@ class SegmentedControlDemoController: DemoController {
 
         let backgroundStyle: ColoredPillBackgroundStyle = {
             switch style {
-            case .primaryPill:
+            case .neutralPill:
                 return .neutral
             case .onBrandPill:
                 return .brand
