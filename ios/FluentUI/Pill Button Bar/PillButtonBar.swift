@@ -105,7 +105,7 @@ open class PillButtonBar: UIScrollView {
     ///
     /// - Parameters:
     ///   - pillButtonStyle: The style override for the pill buttons in this pill button bar
-    @objc public init(pillButtonStyle: PillButtonStyle = .primary) {
+    @objc public init(pillButtonStyle: PillButtonStyle = .brandOverCanvas) {
         self.pillButtonStyle = pillButtonStyle
         super.init(frame: .zero)
         setupScrollView()

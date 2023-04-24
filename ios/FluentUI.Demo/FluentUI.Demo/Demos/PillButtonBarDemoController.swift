@@ -92,9 +92,9 @@ class PillButtonBarDemoController: DemoController {
 
         let backgroundStyle: ColoredPillBackgroundStyle = {
             switch style {
-            case .primary:
+            case .primary, .brandOverCanvas, .neutralOverCanvas, .neutralOverNavBar:
                 return .neutral
-            case .onBrand:
+            case .onBrand, .brandOverNavBar:
                 return .brand
             }
         }()

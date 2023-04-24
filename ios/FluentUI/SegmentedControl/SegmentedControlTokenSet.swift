@@ -198,4 +198,10 @@ public enum SegmentedControlStyle: Int {
     case onBrandPill
     /// Segments are shown as labels inside a pill for use with a neutral or white background.
     case neutralPill
+    /// Segments are shown as labels inside a pill for use on a branded background hosted inside the NavigationBar, which features a prominent brand color in light mode and a muteg rey in dark mode.
+    /// Colors are lighter in dark mode and darker in light mode than they are for the onBrandPill style.
+    // case onBrandNavigationBarPill
+    /// Segments are shown as labels inside a pill for use on a neutral or white background hosted inside the NavigationBar.
+    /// Colors are lighter in dark mode and darker in light mode than they are for the neutralPill style.
+    // case neutralNavigationBarPill
 }

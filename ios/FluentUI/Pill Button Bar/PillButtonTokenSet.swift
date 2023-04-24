@@ -49,11 +49,11 @@ public class PillButtonTokenSet: ControlTokenSet<PillButtonTokenSet.Tokens> {
             case .backgroundColor:
                 return .uiColor {
                     switch style() {
-                    case .primary:
+                    case .primary, .brandOverCanvas, .neutralOverNavBar, .neutralOverCanvas:
                         return UIColor(light: theme.color(.background5).light,
                                        dark: theme.color(.background3).dark,
                                        darkElevated: theme.color(.background5).darkElevated)
-                    case .onBrand:
+                    case .onBrand, .brandOverNavBar:
                         return UIColor(light: theme.color(.brandBackground2).light,
                                        dark: theme.color(.background3).dark,
                                        darkElevated: theme.color(.background5).darkElevated)
@@ -63,11 +63,11 @@ public class PillButtonTokenSet: ControlTokenSet<PillButtonTokenSet.Tokens> {
             case .backgroundColorDisabled:
                 return .uiColor {
                     switch style() {
-                    case .primary:
+                    case .primary, .brandOverCanvas, .neutralOverNavBar, .neutralOverCanvas:
                         return UIColor(light: theme.color(.background5).light,
                                        dark: theme.color(.background3).dark,
                                        darkElevated: theme.color(.background5).darkElevated)
-                    case .onBrand:
+                    case .onBrand, .brandOverNavBar:
                         return UIColor(light: theme.color(.brandBackground2).light,
                                        dark: theme.color(.background3).dark,
                                        darkElevated: theme.color(.background5).darkElevated)
@@ -77,9 +77,9 @@ public class PillButtonTokenSet: ControlTokenSet<PillButtonTokenSet.Tokens> {
             case .backgroundColorSelected:
                 return .uiColor {
                     switch style() {
-                    case .primary:
+                    case .primary, .brandOverCanvas, .neutralOverNavBar, .neutralOverCanvas:
                         return theme.color(.brandBackground1)
-                    case .onBrand:
+                    case .onBrand, .brandOverNavBar:
                         return UIColor(light: theme.color(.background1).light,
                                        dark: theme.color(.background3Selected).dark,
                                        darkElevated: theme.color(.background5Selected).darkElevated)
@@ -89,9 +89,9 @@ public class PillButtonTokenSet: ControlTokenSet<PillButtonTokenSet.Tokens> {
             case .backgroundColorSelectedDisabled:
                 return .uiColor {
                     switch style() {
-                    case .primary:
+                    case .primary, .brandOverCanvas, .neutralOverNavBar, .neutralOverCanvas:
                         return theme.color(.brandBackground1)
-                    case .onBrand:
+                    case .onBrand, .brandOverNavBar:
                         return UIColor(light: theme.color(.background1).light,
                                        dark: theme.color(.background3Selected).dark,
                                        darkElevated: theme.color(.background5Selected).darkElevated)
@@ -101,9 +101,9 @@ public class PillButtonTokenSet: ControlTokenSet<PillButtonTokenSet.Tokens> {
             case .disabledUnreadDotColor:
                 return .uiColor {
                     switch style() {
-                    case .primary:
+                    case .primary, .brandOverCanvas, .neutralOverNavBar, .neutralOverCanvas:
                         return theme.color(.foregroundDisabled1)
-                    case .onBrand:
+                    case .onBrand, .brandOverNavBar:
                         return theme.color(.brandForegroundDisabled1)
                     }
                 }
@@ -111,10 +111,10 @@ public class PillButtonTokenSet: ControlTokenSet<PillButtonTokenSet.Tokens> {
             case .enabledUnreadDotColor:
                 return .uiColor {
                     switch style() {
-                    case .primary:
+                    case .primary, .brandOverCanvas, .neutralOverNavBar, .neutralOverCanvas:
                         return UIColor(light: theme.color(.brandForeground1).light,
                                        dark: theme.color(.foreground1).dark)
-                    case .onBrand:
+                    case .onBrand, .brandOverNavBar:
                         return UIColor(light: theme.color(.foregroundOnColor).light,
                                        dark: theme.color(.foreground1).dark)
                     }
@@ -126,9 +126,9 @@ public class PillButtonTokenSet: ControlTokenSet<PillButtonTokenSet.Tokens> {
             case .titleColor:
                 return .uiColor {
                     switch style() {
-                    case .primary:
+                    case .primary, .brandOverCanvas, .neutralOverNavBar, .neutralOverCanvas:
                         return theme.color(.foreground2)
-                    case .onBrand:
+                    case .onBrand, .brandOverNavBar:
                         return UIColor(light: theme.color(.foregroundOnColor).light,
                                        dark: theme.color(.foreground2).dark,
                                        darkElevated: theme.color(.foreground2).darkElevated)
@@ -138,9 +138,9 @@ public class PillButtonTokenSet: ControlTokenSet<PillButtonTokenSet.Tokens> {
             case .titleColorDisabled:
                 return .uiColor {
                     switch style() {
-                    case .primary:
+                    case .primary, .brandOverCanvas, .neutralOverNavBar, .neutralOverCanvas:
                         return theme.color(.foregroundDisabled1)
-                    case .onBrand:
+                    case .onBrand, .brandOverNavBar:
                         return UIColor(light: theme.color(.brandForegroundDisabled1).light,
                                        dark: theme.color(.foregroundDisabled1).dark,
                                        darkElevated: theme.color(.foregroundDisabled1).darkElevated)
@@ -150,9 +150,9 @@ public class PillButtonTokenSet: ControlTokenSet<PillButtonTokenSet.Tokens> {
             case .titleColorSelected:
                 return .uiColor {
                     switch style() {
-                    case .primary:
+                    case .primary, .brandOverCanvas, .neutralOverNavBar, .neutralOverCanvas:
                         return theme.color(.foregroundOnColor)
-                    case .onBrand:
+                    case .onBrand, .brandOverNavBar:
                         return UIColor(light: theme.color(.brandForeground1).light,
                                        dark: theme.color(.foreground1).dark,
                                        darkElevated: theme.color(.foreground1).darkElevated)
@@ -162,9 +162,9 @@ public class PillButtonTokenSet: ControlTokenSet<PillButtonTokenSet.Tokens> {
             case .titleColorSelectedDisabled:
                 return .uiColor {
                     switch style() {
-                    case .primary:
+                    case .primary, .brandOverCanvas, .neutralOverNavBar, .neutralOverCanvas:
                         return theme.color(.brandForegroundDisabled1)
-                    case .onBrand:
+                    case .onBrand, .brandOverNavBar:
                         return UIColor(light: theme.color(.brandForegroundDisabled2).light,
                                        dark: theme.color(.foregroundDisabled2).dark,
                                        darkElevated: theme.color(.foregroundDisabled2).darkElevated)
@@ -202,10 +202,26 @@ extension PillButtonTokenSet {
 
 @objc(MSFPillButtonStyle)
 public enum PillButtonStyle: Int {
-    /// primary: the default style of PillButton; use this style in conjunction with a neutral or white background.
+    /// primary: use this style in conjunction with a neutral or white background.
+    @available(*, deprecated, message: "primary is now deprecated. Please use neutralOverCanvas.")
     case primary
 
     /// onBrand: use this style in conjunction with branded background where the background features
     /// a prominent brand color in light mode and a muted gray in dark mode.
+    @available(*, deprecated, message: "onBrand is now deprecated. Please use brandOverNavBar.")
     case onBrand
+
+    /// brandOverCanvas: the default style of PillButton; use this style in conjuction with a neutral or white backround,
+    /// when the buttons should be a prominent brand color in light mode and a muted grey in dark mode.
+    case brandOverCanvas
+
+    /// brandOverNavBar: use this style in conjunction with branded Navigation Bar where the background features
+    /// a prominent brand color in light mode and a muted gray in dark mode.
+    case brandOverNavBar
+
+    /// neutralOverCanvas: use this style in conjunction with a neutral or white background.
+    case neutralOverCanvas
+
+    /// neutralOverNavBar: use this style in conjunction with a non-brand-colored Navigation Bar.
+    case neutralOverNavBar
 }

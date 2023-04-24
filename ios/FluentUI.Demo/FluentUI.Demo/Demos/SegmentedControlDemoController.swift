@@ -105,7 +105,7 @@ class SegmentedControlDemoController: DemoController {
 
         let backgroundStyle: ColoredPillBackgroundStyle = {
             switch style {
-            case .neutralPill:
+            case .neutralPill, .primaryPill:
                 return .neutral
             case .onBrandPill:
                 return .brand

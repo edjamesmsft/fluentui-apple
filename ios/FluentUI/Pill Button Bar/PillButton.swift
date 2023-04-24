@@ -29,7 +29,7 @@ open class PillButton: UIButton, TokenizedControlInternal {
     }
 
     @objc public init(pillBarItem: PillButtonBarItem,
-                      style: PillButtonStyle = .primary) {
+                      style: PillButtonStyle = .brandOverCanvas) {
         self.pillBarItem = pillBarItem
         self.style = style
         self.tokenSet = PillButtonTokenSet(style: { style })
