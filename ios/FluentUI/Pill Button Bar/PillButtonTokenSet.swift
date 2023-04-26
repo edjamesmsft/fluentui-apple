@@ -49,13 +49,13 @@ public class PillButtonTokenSet: ControlTokenSet<PillButtonTokenSet.Tokens> {
             case .backgroundColor:
                 return .uiColor {
                     switch style() {
-                    case .primary, .brandOverCanvas, .neutralOverNavBar, .neutralOverCanvas:
-                        return UIColor(light: theme.color(.background5).light,
-                                       dark: theme.color(.background3).dark,
-                                       darkElevated: theme.color(.background5).darkElevated)
+                    case .primary, .neutralOverNavBar:
+                        return theme.color(.background5)
+                    case .brandOverCanvas, .neutralOverCanvas:
+                        return theme.color(.background3)
                     case .onBrand, .brandOverNavBar:
                         return UIColor(light: theme.color(.brandBackground2).light,
-                                       dark: theme.color(.background3).dark,
+                                       dark: theme.color(.background5).dark,
                                        darkElevated: theme.color(.background5).darkElevated)
                     }
                 }
